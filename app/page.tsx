@@ -18,15 +18,15 @@ const gradientConfig = {
   intensity: 0.25,
   noise: 0.25,
   shape: "wave" as const,
-  speed: 0.25,
-  rotation: 30,
-  offsetX: -0.38,
+  speed: 0.75,
+  rotation: 45,
+  offsetX: -0.15,
   fit: "cover" as const,
 };
 
 export default function Page() {
   return (
-    <main className="flex h-full flex-col items-center border-2 border-dashed max-w-4xl mx-auto">
+    <main className="flex h-full flex-col items-center border-dashed max-w-4xl mx-auto">
       <div className="relative w-full max-w-4xl overflow-hidden">
         <div className="absolute inset-0 h-64">
           <GrainGradient
