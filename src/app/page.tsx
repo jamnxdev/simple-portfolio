@@ -29,20 +29,21 @@ const gradientConfig = {
   speed: 0.75,
   rotation: 45,
   offsetX: -0.15,
-  fit: "cover" as const,
+  fit: "contain" as const,
 };
 
 export default function Page() {
   return (
-    <main className="flex h-full flex-col gap-4 items-center border-dashed max-w-4xl mx-auto">
-      <div className="relative w-full max-w-4xl overflow-hidden">
-        <div className="absolute inset-0 h-64">
+    <>
+      {/* HERO */}
+      <div className="relative w-full max-w-4xl aspect-2/1 sm:aspect-3/1 p-2 border-t-2 border-dashed">
+        <div className="absolute inset-0 h-full p-2">
           <GrainGradient
             {...gradientConfig}
-            className="h-full w-full object-cover"
+            className="h-full! w-full! mx-auto object-cover"
           />
         </div>
-        <div className="relative flex h-64 flex-col items-center justify-center text-white">
+        <div className="relative flex h-full flex-col items-center justify-center text-white">
           <h1 className="text-5xl font-bold">Jaimin</h1>
           <FlipSentences
             className="font-mono text-sm font-bold text-white text-balance"
@@ -57,8 +58,8 @@ export default function Page() {
           </FlipSentences>
         </div>
       </div>
-
-      <div className="w-full">
+      {/* ABOUT ME */}
+      <div className="w-full border-y-2 border-dashed p-2">
         <p className="text-lg font-bold">About Me</p>
         <div className="flex flex-col *:flex *:items-start *:gap-2">
           <p>
@@ -92,6 +93,6 @@ export default function Page() {
           </p>
         </div>
       </div>
-    </main>
+    </>
   );
 }
