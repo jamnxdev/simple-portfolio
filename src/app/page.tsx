@@ -60,19 +60,19 @@ export default function Page() {
 
       <div className="w-full">
         <p className="text-lg font-bold">About Me</p>
-        <div className="flex flex-col">
-          <p className="flex items-start gap-2">
-            <span className="pt-0.5">
-              <DotIcon weight="duotone" size={16} />
+        <div className="flex flex-col *:flex *:items-start *:gap-2">
+          <p>
+            <span>
+              <DotIcon weight="duotone" size={22} />
             </span>
             <span>
               Software engineer with a product oriented mindset who knows how to
               ship fast.
             </span>
           </p>
-          <p className="flex items-start gap-2">
-            <span className="pt-0.5">
-              <DotIcon weight="duotone" size={16} />
+          <p>
+            <span>
+              <DotIcon weight="duotone" size={22} />
             </span>
             <span>
               I mostly use Typescript, React, Next.js, Bun and PostgreSQL to
@@ -81,9 +81,9 @@ export default function Page() {
               too.
             </span>
           </p>
-          <p className="flex items-start gap-2">
-            <span className="pt-0.5">
-              <DotIcon weight="duotone" size={16} />
+          <p>
+            <span>
+              <DotIcon weight="duotone" size={22} />
             </span>
             <span>
               I'm not a designer, but I have a keen eye to make things that look
