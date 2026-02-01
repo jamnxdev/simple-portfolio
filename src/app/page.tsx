@@ -1,4 +1,10 @@
 import { FlipSentences } from "@/components/flip-sentences";
+import {
+  GitHubContributionFallback,
+  GitHubContributionGraph,
+} from "@/components/gh-contribution-graph";
+import { Button } from "@/components/ui/button";
+import { getGitHubContributions } from "@/lib/github-contribution";
 import { GrainGradient } from "@paper-design/shaders-react";
 import {
   DotIcon,
@@ -8,6 +14,8 @@ import {
   SquareIcon,
   SquareLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+import { Suspense } from "react";
 
 const gradientConfig = {
   width: 1280,
@@ -33,10 +41,11 @@ const gradientConfig = {
 };
 
 export default function Page() {
+  const contributions = getGitHubContributions();
   return (
     <>
       {/* HERO */}
-      <div className="relative w-full max-w-4xl aspect-2/1 sm:aspect-3/1 p-2 border-t-2 border-dashed">
+      <div className="relative w-full aspect-2/1 sm:aspect-3/1 p-2 border-t-2 border-dashed">
         <div className="absolute inset-0 h-full p-2">
           <GrainGradient
             {...gradientConfig}
@@ -60,7 +69,6 @@ export default function Page() {
       </div>
       {/* ABOUT ME */}
       <div className="w-full border-y-2 border-dashed p-2">
-        <p className="text-lg font-bold">About Me</p>
         <div className="flex flex-col *:flex *:items-start *:gap-2">
           <p>
             <span>
@@ -92,6 +100,41 @@ export default function Page() {
             </span>
           </p>
         </div>
+      </div>
+      {/* SOCIALS */}
+      <div className="w-full border-b-2 border-dashed gap-2 p-2  grid grid-cols-2 md:grid-cols-4 *:*:rounded-none *:*:border-dashed *:*:border-1 *:*:shadow-none *:*:w-full">
+        <Link target="_blank" href={"https://github.com/jamnxdev"}>
+          <Button variant={"outline"}>Github</Button>
+        </Link>
+        <Link target="_blank" href={"https://x.com/jamnxdev"}>
+          <Button variant={"outline"}>X</Button>
+        </Link>
+        <Link target="_blank" href={"https://linkedin.com/jamnxdev"}>
+          <Button variant={"outline"}>LinkedIn</Button>
+        </Link>
+
+        <Link target="_blank" href={"https://youtube.com/@jamnxdev"}>
+          <Button variant={"outline"}>YouTube</Button>
+        </Link>
+        <Link target="_blank" href={"https://medium.com/jamnxdev"}>
+          <Button variant={"outline"}>Medium</Button>
+        </Link>
+        <Link target="_blank" href={"https://discord.com/invite/YY9TTn7x"}>
+          <Button variant={"outline"}>Discord</Button>
+        </Link>
+        <Link target="_blank" href={"https://instagram.com/jamnxdev"}>
+          <Button variant={"outline"}>Instagram</Button>
+        </Link>
+        <Link target="_blank" href={"https://peerlist.io/jamnxdev"}>
+          <Button variant={"outline"}>Peerlist</Button>
+        </Link>
+      </div>
+
+      {/* GITHUB CONTRIBUTION */}
+      <div className="w-full border-dashed p-1">
+        <Suspense fallback={<GitHubContributionFallback />}>
+          <GitHubContributionGraph contributions={contributions} />
+        </Suspense>
       </div>
     </>
   );
