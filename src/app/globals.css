@@ -116,6 +116,11 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+/* Social link: hover fill is set per-link via --icon-hover-fill on the group */
+.social-links .group:hover svg {
+  fill: var(--icon-hover-fill, currentColor);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
