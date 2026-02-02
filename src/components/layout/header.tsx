@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React from "react";
 import { Button } from "../ui/button";
+import { NAV_ITEMS } from "@/config/site";
 
 export default function Header() {
   return (
@@ -10,16 +10,13 @@ export default function Header() {
           <Link href={"/"}>/home</Link>
         </div>
         <div className="space-x-2">
-          <Link href={"/projects"}>
-            <Button variant={"link"} className={"px-0 text-base"}>
-              projects
-            </Button>
-          </Link>
-          <Link href={"/blogs"}>
-            <Button variant={"link"} className={"px-0 text-base"}>
-              blogs
-            </Button>
-          </Link>
+          {NAV_ITEMS.map((item, key) => (
+            <Link href={item.href} key={key}>
+              <Button variant={"link"} className={"px-0 text-base"}>
+                {item.title}
+              </Button>
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

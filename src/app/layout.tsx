@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
+import { SITE_INFO } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -16,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jaimin Chovatia -- Software Engineer",
-  description: "A personal website to showcase my work",
+  title: SITE_INFO.title,
+  description: SITE_INFO.description,
 };
 
 export default function RootLayout({
