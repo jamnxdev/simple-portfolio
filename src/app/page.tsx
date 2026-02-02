@@ -4,6 +4,7 @@ import {
   GitHubContributionGraph,
 } from "@/components/gh-contribution-graph";
 import { Button } from "@/components/ui/button";
+import { SOCIALS } from "@/config/content/socials";
 import { USER } from "@/config/content/user";
 import { getGitHubContributions } from "@/lib/github-contribution";
 import { GrainGradient } from "@paper-design/shaders-react";
@@ -83,31 +84,11 @@ export default function Page() {
       </div>
       {/* SOCIALS */}
       <div className="w-full border-b-2 border-dashed gap-2 p-2  grid grid-cols-2 md:grid-cols-4 *:*:rounded-none *:*:border-dashed *:*:border-1 *:*:shadow-none *:*:w-full">
-        <Link target="_blank" href={"https://github.com/jamnxdev"}>
-          <Button variant={"outline"}>Github</Button>
-        </Link>
-        <Link target="_blank" href={"https://x.com/jamnxdev"}>
-          <Button variant={"outline"}>X</Button>
-        </Link>
-        <Link target="_blank" href={"https://linkedin.com/jamnxdev"}>
-          <Button variant={"outline"}>LinkedIn</Button>
-        </Link>
-
-        <Link target="_blank" href={"https://youtube.com/@jamnxdev"}>
-          <Button variant={"outline"}>YouTube</Button>
-        </Link>
-        <Link target="_blank" href={"https://medium.com/jamnxdev"}>
-          <Button variant={"outline"}>Medium</Button>
-        </Link>
-        <Link target="_blank" href={"https://discord.com/invite/YY9TTn7x"}>
-          <Button variant={"outline"}>Discord</Button>
-        </Link>
-        <Link target="_blank" href={"https://instagram.com/jamnxdev"}>
-          <Button variant={"outline"}>Instagram</Button>
-        </Link>
-        <Link target="_blank" href={"https://peerlist.io/jamnxdev"}>
-          <Button variant={"outline"}>Peerlist</Button>
-        </Link>
+        {SOCIALS.map((item, i) => (
+          <Link target="_blank" href={item.url} key={i}>
+            <Button variant={"outline"}>{item.title}</Button>
+          </Link>
+        ))}
       </div>
 
       {/* GITHUB CONTRIBUTION */}
