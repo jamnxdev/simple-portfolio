@@ -4,6 +4,7 @@ import {
   GitHubContributionGraph,
 } from "@/components/gh-contribution-graph";
 import { Button } from "@/components/ui/button";
+import { USER } from "@/config/content/user";
 import { getGitHubContributions } from "@/lib/github-contribution";
 import { GrainGradient } from "@paper-design/shaders-react";
 import {
@@ -53,7 +54,7 @@ export default function Page() {
           />
         </div>
         <div className="relative flex h-full flex-col items-center justify-center text-white">
-          <h1 className="text-5xl font-bold">Jaimin</h1>
+          <h1 className="text-5xl font-bold">{USER.name}</h1>
           <FlipSentences
             className="font-mono text-sm font-bold text-white text-balance"
             variants={{
@@ -63,42 +64,21 @@ export default function Page() {
             }}
             interval={2.25}
           >
-            {["Software Engineer", "Freelancer", "Builder"]}
+            {USER.flipSentences}
           </FlipSentences>
         </div>
       </div>
       {/* ABOUT ME */}
       <div className="w-full border-y-2 border-dashed p-2">
         <div className="flex flex-col *:flex *:items-start *:gap-2">
-          <p>
-            <span>
-              <DotIcon weight="duotone" size={22} />
-            </span>
-            <span>
-              Software engineer with a product oriented mindset who knows how to
-              ship fast.
-            </span>
-          </p>
-          <p>
-            <span>
-              <DotIcon weight="duotone" size={22} />
-            </span>
-            <span>
-              I mostly use Typescript, React, Next.js, Bun and PostgreSQL to
-              build full stack web apps, but my skills are not limited to just
-              these technologies. I also have experience with other technologies
-              too.
-            </span>
-          </p>
-          <p>
-            <span>
-              <DotIcon weight="duotone" size={22} />
-            </span>
-            <span>
-              I'm not a designer, but I have a keen eye to make things that look
-              visually appealing.
-            </span>
-          </p>
+          {USER.aboutMe.map((item, i) => (
+            <p key={i}>
+              <span>
+                <DotIcon weight="duotone" size={22} />
+              </span>
+              <span>{item}</span>
+            </p>
+          ))}
         </div>
       </div>
       {/* SOCIALS */}
