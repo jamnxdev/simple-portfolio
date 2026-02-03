@@ -47,7 +47,7 @@ export default function Page() {
   return (
     <>
       {/* HERO */}
-      <div className="relative w-full aspect-2/1 sm:aspect-3/1 p-2 border-t-2 border-dashed">
+      <div className="relative w-full aspect-2/1 sm:aspect-3/1 p-2">
         <div className="absolute inset-0 h-full p-2">
           <GrainGradient
             {...gradientConfig}
