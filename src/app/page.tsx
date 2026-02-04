@@ -3,7 +3,14 @@ import {
   GitHubContributionFallback,
   GitHubContributionGraph,
 } from "@/components/gh-contribution-graph";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { EXPERIENCE } from "@/config/content/experience";
 import { SOCIALS } from "@/config/content/socials";
 import { USER } from "@/config/content/user";
 import { getGitHubContributions } from "@/lib/github-contribution";
@@ -105,6 +112,37 @@ export default function Page() {
                 {item.title}
               </Button>
             </Link>
+          );
+        })}
+      </div>
+
+      {/* EXPERIENCE */}
+      <div className="w-full border-b-2 border-dashed p-2">
+        {EXPERIENCE.map((item, i) => {
+          return (
+            <Accordion
+              multiple
+              key={i}
+              defaultValue={[0, 1]}
+              className={"border border-dashed"}
+            >
+              <AccordionItem value={i}>
+                <AccordionTrigger className={"py-0 border-b"}>
+                  <div className="flex flex-col m-2">
+                    <p>{item.companyName}</p>
+                    <p className="text-xs">
+                      {item.role} ({item.position})
+                    </p>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-col p-2">
+                    <p className="text-muted-foreground">{item.description}</p>
+                    <p>{item.toolsNTech.flat().join(", ")}</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           );
         })}
       </div>
