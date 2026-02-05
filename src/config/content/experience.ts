@@ -1,8 +1,9 @@
 export const EXPERIENCE = [
   {
-    companyName: "abc",
-    role: "Full Stack Developer",
-    position: "Intern",
+    companyName: "have a nice day :)",
+    logo: "company1-logo.webp",
+    role: "Full-stack Developer",
+    position: "Full-time",
     toolsNTech: [
       "Typescript",
       "Next.js",
@@ -11,16 +12,21 @@ export const EXPERIENCE = [
       "MySQL",
       "Figma",
       "WordPress",
+      "Stripe",
+      "Razorpay",
+      "CI/CD",
+      "GitHub Actions",
     ],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    joinDate: "01-01-2025",
-    leaveDate: "01-01-2026",
+      "Optimized UI performance by 25% and integrated multiple payment gateways (Stripe, Razorpay, Pesapal). Automated CI/CD pipelines for streamlined deployments and maintained .NET Core local servers for backend testing. Collaborated with cross-functional teams to resolve UI/UX challenges and improve customer satisfaction.",
+    joinDate: "01-12-2024",
+    leaveDate: "01-04-2025",
     type: "On-Site",
   },
   {
-    companyName: "xyz",
-    role: "Full Stack Developer",
+    companyName: "but why?",
+    role: "Full-stack Developer",
+    logo: "company2-logo.webp",
     position: "Intern",
     toolsNTech: [
       "Typescript",
@@ -33,9 +39,9 @@ export const EXPERIENCE = [
       "Cloudinary",
     ],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    joinDate: "01-01-1999",
-    leaveDate: "01-01-2099",
+      "Co-built Claimit, a real-time auction marketplace with a team of 3. Implemented Redis caching for optimized search performance and architected a Stripe-based wallet system for secure transactions. Automated auction workflows with real-time updates and resolved concurrency issues to ensure data integrity.",
+    joinDate: "01-05-2024",
+    leaveDate: "01-06-2024",
     type: "On-Site",
   },
 ];
