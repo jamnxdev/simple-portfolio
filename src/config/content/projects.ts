@@ -1,0 +1,78 @@
+export const PROJECTS = [
+  {
+    title: "project1",
+    description:
+      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
+    imgSRC: "",
+    status: "",
+    liveURL: "",
+    githubURL: "",
+    toolsNTech: [
+      "Typescript",
+      "Next.js",
+      "Hono",
+      "Redis",
+      "PostgreSQL",
+      "Socket.io",
+      "Stripe",
+      "Cloudinary",
+    ],
+  },
+  {
+    title: "project2",
+    description:
+      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
+    imgSRC: "",
+    status: "",
+    liveURL: "",
+    githubURL: "",
+    toolsNTech: [
+      "Typescript",
+      "Next.js",
+      "Hono",
+      "Redis",
+      "PostgreSQL",
+      "Socket.io",
+      "Stripe",
+      "Cloudinary",
+    ],
+  },
+  {
+    title: "project3",
+    description:
+      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
+    imgSRC: "",
+    status: "",
+    liveURL: "",
+    githubURL: "",
+    toolsNTech: [
+      "Typescript",
+      "Next.js",
+      "Hono",
+      "Redis",
+      "PostgreSQL",
+      "Socket.io",
+      "Stripe",
+      "Cloudinary",
+    ],
+  },
+  {
+    title: "project4",
+    description:
+      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
+    imgSRC: "",
+    status: "",
+    liveURL: "",
+    githubURL: "",
+    toolsNTech: [
+      "Typescript",
+      "Next.js",
+      "Hono",
+      "Redis",
+      "PostgreSQL",
+      "Socket.io",
+      "Stripe",
+      "Cloudinary",
+    ],
+  },
+];

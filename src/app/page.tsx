@@ -11,7 +11,21 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Status,
+  StatusIndicator,
+  StatusLabel,
+} from "@/components/ui/status-indicator";
 import { EXPERIENCE } from "@/config/content/experience";
+import { PROJECTS } from "@/config/content/projects";
 import { SOCIALS } from "@/config/content/socials";
 import { USER } from "@/config/content/user";
 import { getGitHubContributions } from "@/lib/github-contribution";
@@ -164,6 +178,49 @@ export default function Page() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+          );
+        })}
+      </div>
+
+      {/* PROJECTS */}
+      <div className="p-2 border-b-2 border-dashed grid sm:grid-cols-2 gap-2">
+        {PROJECTS.map((item, i) => {
+          return (
+            <Card className="relative mx-auto w-full pt-0 rounded p-2 gap-2 ring-0 shadow-none border-dashed border">
+              <div className="absolute inset-0 z-30 aspect-video" />
+              <img
+                src="https://avatar.vercel.sh/shadcn1"
+                alt="Event cover"
+                className="relative z-5 ring-offset rounded ring-2 p-0.25 ring-border aspect-video w-full object-cover grayscale"
+              />{" "}
+              <CardHeader className="p-0">
+                <CardTitle>
+                  <div className="flex items-center justify-between">
+                    {item.title}
+
+                    <Status status="online">
+                      <StatusIndicator />
+                    </Status>
+                  </div>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <p>{item.description}</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {item.toolsNTech &&
+                    item.toolsNTech.length > 0 &&
+                    item.toolsNTech.map((tech, idx) => (
+                      <Badge
+                        key={idx}
+                        variant={"secondary"}
+                        className="rounded"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                </div>
+              </CardContent>
+            </Card>
           );
         })}
       </div>
