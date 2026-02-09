@@ -19,6 +19,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import {
   Status,
   StatusIndicator,
@@ -186,13 +187,26 @@ export default function Page() {
       <div className="p-2 border-b-2 border-dashed grid sm:grid-cols-2 gap-2">
         {PROJECTS.map((item, i) => {
           return (
-            <Card className="relative mx-auto w-full pt-0 rounded p-2 gap-2 ring-0 shadow-none border-dashed border">
-              <div className="absolute inset-0 z-30 aspect-video" />
-              <img
-                src="https://avatar.vercel.sh/shadcn1"
-                alt="Event cover"
-                className="relative z-5 ring-offset rounded ring-2 p-0.25 ring-border aspect-video w-full object-cover grayscale"
-              />{" "}
+            <Card
+              key={i}
+              className="relative! mx-auto w-full pt-0 rounded p-2 gap-2 ring-0 shadow-none border-dashed border"
+            >
+              <HeroVideoDialog
+                className="block dark:hidden ring-offset rounded ring-2 p-0.25 ring-border aspect-video"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                thumbnailAlt="Hero Video"
+              />
+              <HeroVideoDialog
+                className="hidden dark:block z-5 ring-offset rounded ring-2 p-0.25 ring-border aspect-video"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                thumbnailAlt="Hero Video"
+              />
+
+              {/* <div className="absolute inset-0 z-30 aspect-video" /> */}
               <CardHeader className="p-0">
                 <CardTitle>
                   <div className="flex items-center justify-between">
