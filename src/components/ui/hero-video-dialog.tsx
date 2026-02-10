@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 import { PlayIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
+import { Button } from "./button";
 
 type AnimationStyle =
   | "from-bottom"
@@ -129,10 +130,12 @@ export function HeroVideoDialog({
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
               className="relative mx-4 aspect-video w-full max-w-4xl md:mx-0"
             >
-              <motion.button className="absolute -top-16 right-0 rounded-full bg-neutral-900/50 p-2 text-xl text-white ring-1 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black">
-                <XIcon className="size-5" />
+              <motion.button className="absolute -top-3 -right-3 z-10">
+                <Button variant={"outline"} className={"rounded-full"}>
+                  <XIcon className="size-5" />
+                </Button>
               </motion.button>
-              <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
+              <div className="relative isolate z-5 size-full overflow-hidden rounded-2xl border-2 border-dashed">
                 <iframe
                   src={videoSrc}
                   title="Hero Video player"
