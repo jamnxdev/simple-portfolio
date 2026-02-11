@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,6 +26,11 @@ import {
   StatusIndicator,
   StatusLabel,
 } from "@/components/ui/status-indicator";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { EXPERIENCE } from "@/config/content/experience";
 import { PROJECTS } from "@/config/content/projects";
 import { SOCIALS } from "@/config/content/socials";
@@ -32,7 +38,12 @@ import { USER } from "@/config/content/user";
 import { getGitHubContributions } from "@/lib/github-contribution";
 import { GrainGradient } from "@paper-design/shaders-react";
 import {
+  CursorClickIcon,
+  CursorIcon,
   DotIcon,
+  EyeIcon,
+  FolderIcon,
+  FolderOpenIcon,
   GearIcon,
   MinusIcon,
   PlusIcon,
@@ -125,7 +136,10 @@ export default function Page() {
               }
             >
               <Button variant={"outline"}>
-                <Icon weight="duotone" className="size-5!" />
+                <Icon
+                  weight="duotone"
+                  className="size-5! duration-200 transition-all group-hover:scale-112 group-hover:rotate-15"
+                />
                 {item.title}
               </Button>
             </Link>
@@ -184,59 +198,94 @@ export default function Page() {
       </div>
 
       {/* PROJECTS */}
-      <div className="p-2 border-b-2 border-dashed grid sm:grid-cols-2 gap-2">
-        {PROJECTS.map((item, i) => {
-          return (
-            <Card
-              key={i}
-              className="relative! mx-auto w-full pt-0 rounded p-2 gap-2 ring-0 shadow-none border-dashed border"
-            >
-              <HeroVideoDialog
-                className="block dark:hidden ring-offset rounded ring-2 p-0.25 ring-border aspect-video"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-                thumbnailAlt="Hero Video"
-              />
-              <HeroVideoDialog
-                className="hidden dark:block z-5 ring-offset rounded ring-2 p-0.25 ring-border aspect-video"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
-                thumbnailAlt="Hero Video"
-              />
+      <div className="border-b-2 border-dashed p-2 flex flex-col gap-2 items-center">
+        <div className="grid sm:grid-cols-2 gap-2">
+          {PROJECTS.slice(0, 2).map((item, i) => {
+            const status =
+              item.status.charAt(0).toUpperCase() + item.status.slice(1);
+            return (
+              <Card
+                key={i}
+                className="relative! mx-auto w-full pt-0 rounded p-2 gap-2 ring-0 shadow-none border-dashed border"
+              >
+                <HeroVideoDialog
+                  className="block dark:hidden ring-offset rounded ring-2 p-0.25 ring-border aspect-video"
+                  animationStyle="from-center"
+                  videoSrc={item.videoSRC}
+                  thumbnailSrc={item.imgSRC}
+                  thumbnailAlt="Hero Video"
+                />
+                <HeroVideoDialog
+                  className="hidden dark:block ring-offset rounded ring-2 p-0.25 ring-border aspect-video"
+                  animationStyle="from-center"
+                  videoSrc={item.videoSRC}
+                  thumbnailSrc={item.imgSRC}
+                  thumbnailAlt="Hero Video"
+                />
 
-              {/* <div className="absolute inset-0 z-30 aspect-video" /> */}
-              <CardHeader className="p-0">
-                <CardTitle>
-                  <div className="flex items-center justify-between">
-                    {item.title}
+                {/* <div className="absolute inset-0 z-30 aspect-video" /> */}
+                <CardHeader className="p-0">
+                  <CardTitle>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Avatar className="h-6 w-6 ring-2 ring-offset rounded p-0.25 ring-border">
+                          <AvatarImage
+                            className={"rounded"}
+                            src={`${item.liveURL}/favicon.ico`}
+                          />
+                        </Avatar>
+                        {item.title}
+                      </div>
 
-                    <Status status="online">
-                      <StatusIndicator />
-                    </Status>
+                      <Tooltip>
+                        <TooltipTrigger className={"cursor-pointer"}>
+                          <Status status={item.status}>
+                            <StatusIndicator />
+                          </Status>
+                        </TooltipTrigger>
+                        <TooltipContent>{status}</TooltipContent>
+                      </Tooltip>
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p>{item.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {item.toolsNTech &&
+                      item.toolsNTech.length > 0 &&
+                      item.toolsNTech.map((tech, idx) => (
+                        <Badge
+                          key={idx}
+                          variant={"secondary"}
+                          className="rounded"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                   </div>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p>{item.description}</p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {item.toolsNTech &&
-                    item.toolsNTech.length > 0 &&
-                    item.toolsNTech.map((tech, idx) => (
-                      <Badge
-                        key={idx}
-                        variant={"secondary"}
-                        className="rounded"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <Link href={"/projects"}>
+          <Button
+            className="outline-dashed outline-1 rounded group"
+            variant={"outline"}
+          >
+            <span className="relative inline-flex size-5">
+              <CursorIcon
+                weight="duotone"
+                className="absolute inset-0 size-5 opacity-100 scale-100 transition-all duration-200 group-hover:opacity-0 group-hover:scale-75"
+              />
+              <CursorClickIcon
+                weight="duotone"
+                className="absolute inset-0 size-5 opacity-0 scale-75 transition-all duration-200 group-hover:opacity-100 group-hover:scale-100"
+              />
+            </span>
+            More Projects
+          </Button>
+        </Link>
       </div>
 
       {/* GITHUB CONTRIBUTION */}
