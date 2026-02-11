@@ -1,11 +1,28 @@
-export const PROJECTS = [
+import { StatusProps } from "@/components/ui/status-indicator";
+
+type Project = {
+  title: string;
+  description: string;
+  imgSRC: string;
+  videoSRC: string;
+  status: StatusProps["status"];
+  liveURL: string;
+  backupLiveURL?: string;
+  githubURL: string;
+  toolsNTech: string[];
+};
+
+export const PROJECTS: Project[] = [
   {
-    title: "project1",
+    title: "DDoSim",
     description:
-      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
-    imgSRC: "",
-    status: "",
-    liveURL: "",
+      "DDoSim is an interactive platform for simulating and visualizing Distributed Denial-of-Service (DDoS) attacks in real time across the globe.",
+    imgSRC:
+      "https://raw.githubusercontent.com/DDoSimLab/Site/refs/heads/main/public/og-image.jpg",
+    videoSRC: "https://daydonezo.vercel.app",
+    status: "online",
+    liveURL: "https://ddosim.live",
+    backupLiveURL: "https://ddosim.vercel.app",
     githubURL: "",
     toolsNTech: [
       "Typescript",
@@ -19,60 +36,106 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "project2",
+    title: "DayDonezo",
     description:
-      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
-    imgSRC: "",
-    status: "",
-    liveURL: "",
+      "Digital journaling platform where you can document your daily wins and accomplishments.",
+    imgSRC:
+      "https://raw.githubusercontent.com/Jaimin25/DayDonezo/7e87aeb92b5633fc6e833ec40296849dfcd6fbce/public/Link%20Preview%20-%20DayDonezo.png",
+    videoSRC: "/demo-video/daydonezo-demo.mp4",
+    status: "online",
+    liveURL: "https://daydonezo.vercel.app",
     githubURL: "",
     toolsNTech: [
-      "Typescript",
       "Next.js",
-      "Hono",
-      "Redis",
+      "Typescript",
+      "TailwindCSS",
       "PostgreSQL",
-      "Socket.io",
-      "Stripe",
-      "Cloudinary",
+      "Prisma",
+      "Firebase",
+      "Shadcn UI",
+      "Magic UI",
+      "Aceternity ui",
     ],
   },
   {
-    title: "project3",
+    title: "ConvoNest",
     description:
-      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
-    imgSRC: "",
-    status: "",
-    liveURL: "",
+      "ConvoNest is a realtime web application for chatting, where you can add friends and chat with them individually or in a group",
+    imgSRC:
+      "https://raw.githubusercontent.com/Jaimin25/ConvoNest/refs/heads/main/public/Link%20Preview%20-%20ConvoNest.png",
+    videoSRC: "/demo-video/convonest-demo.mp4",
+    status: "online",
+    liveURL: "https://convonest.vercel.app",
     githubURL: "",
     toolsNTech: [
-      "Typescript",
       "Next.js",
-      "Hono",
-      "Redis",
+      "Typescript",
+      "TailwindCSS",
       "PostgreSQL",
+      "Prisma",
+      "Supabase",
       "Socket.io",
-      "Stripe",
-      "Cloudinary",
     ],
   },
   {
-    title: "project4",
+    title: "Claimit",
     description:
-      "Velit culpa eu cupidatat laboris do mollit. Ea consectetur officia ad esse incididunt. Reprehenderit anim anim pariatur reprehenderit dolore ut fugiat ipsum laboris laborum sint velit. Anim aliquip nostrud qui aute dolore. Adipisicing nulla veniam ullamco non eu ad magna quis laboris quis non velit occaecat culpa. Duis do voluptate labore aute voluptate nostrud.",
-    imgSRC: "",
-    status: "",
-    liveURL: "",
+      "An online marketplace enabling real-time auctions and bidding, driving higher user engagement",
+    imgSRC: "https://i.postimg.cc/3NMw7smq/Link-Preview-Claimit.png",
+    videoSRC: "/demo-video/claimit-demo.mp4",
+    status: "degraded",
+    liveURL: "https://claimit.vercel.app",
+    githubURL: "",
+    toolsNTech: [
+      "Next.js",
+      "Typescript",
+      "TailwindCSS",
+      "Drizzle",
+      "PostgreSQL",
+      "Redis",
+      "Stripe",
+      "Shadcn UI",
+      "Aceternity ui",
+    ],
+  },
+  {
+    title: "Sahyog",
+    description: "A crowdfunding platform",
+    imgSRC:
+      "https://raw.githubusercontent.com/Jaimin25/Sahyog/fecf91be059173c47e7b743863b33b2472a2cfe4/public/Link%20Preview%20-%20Sahyog.png",
+    videoSRC: "/demo-video/sahyog-demo.mp4",
+    status: "online",
+    liveURL: "https://sahyogweb.vercel.app",
     githubURL: "",
     toolsNTech: [
       "Typescript",
       "Next.js",
-      "Hono",
-      "Redis",
-      "PostgreSQL",
-      "Socket.io",
+      "TailwindCSS",
+      "MongoDB",
+      "Express",
+      "ChakraUI",
       "Stripe",
-      "Cloudinary",
+      "Supabase",
+    ],
+  },
+  {
+    title: "GreatMinds",
+    description:
+      "A fun project to explore great individuals who revolutionized the world with their skills and knowledge, shaping humanity's progress through groundbreaking contributions and innovations.",
+    imgSRC:
+      "https://raw.githubusercontent.com/Jaimin25/GreatMinds/1ae55c6fda15d3e98fc82467f2de18e04992ffc2/public/Images/Link%20Preview.png",
+    videoSRC: "/demo-video/grtminds-demo.mp4",
+    status: "maintenance",
+    liveURL: "https://grtminds.vercel.app",
+    githubURL: "",
+    toolsNTech: [
+      "Typescript",
+      "Next.js",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Shadcn UI",
+      "Prisma",
+      "Redis",
     ],
   },
 ];
