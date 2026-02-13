@@ -81,7 +81,8 @@ export const PROJECTS: Project[] = [
     title: "Claimit",
     description:
       "An online marketplace enabling real-time auctions and bidding, driving higher user engagement",
-    imgSRC: "https://i.postimg.cc/3NMw7smq/Link-Preview-Claimit.png",
+    imgSRC:
+      "https://raw.githubusercontent.com/jamnxdev/claimit-frontend/refs/heads/main/public/Link%20Preview%20-%20Claimit.png?token=GHSAT0AAAAAADSQJ3BW4FS4VAWIJZU45JYA2MPKO6A",
     videoSRC: "/demo-videos/claimit-demo.mp4",
     status: "degraded",
     liveURL: "https://claimit.vercel.app",
