@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { PlayIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "./button";
+import Image from "next/image";
 
 type AnimationStyle =
   | "from-bottom"
@@ -86,11 +87,12 @@ export function HeroVideoDialog({
         className="group relative cursor-pointer border-0 bg-transparent p-0 w-full h-full"
         onClick={() => setIsVideoOpen(true)}
       >
-        <img
+        <Image
           src={thumbnailSrc}
           alt={thumbnailAlt}
           width={1920}
           height={1080}
+          loading="lazy"
           className="w-full rounded h-full transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl opacity-0 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100">
