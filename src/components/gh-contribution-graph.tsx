@@ -31,14 +31,14 @@ export function GitHubContributionGraph({
   return (
     <TooltipProvider>
       <ContributionGraph
-        className="w-full py-2"
+        className="mx-auto py-2"
         data={data}
-        blockSize={12}
+        blockSize={11}
         blockMargin={3}
         blockRadius={0}
       >
         <ContributionGraphCalendar
-          className="no-scrollbar w-full px-2"
+          className="no-scrollbar px-2"
           title="GitHub Contributions"
         >
           {({ activity, dayIndex, weekIndex }) => (

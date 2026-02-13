@@ -16,7 +16,7 @@ import React from "react";
 
 export default function ProjectsPage() {
   return (
-    <div className="border-b-2 border-dashed p-2 flex flex-col gap-2 items-center">
+    <div className="p-2 flex flex-col gap-2 items-center">
       <div className="grid sm:grid-cols-2 gap-2">
         {PROJECTS.map((item, i) => {
           const status =
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
                 <CardTitle>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <Avatar className="h-6 w-6 ring-2 ring-offset rounded p-0.25 ring-border">
+                      <Avatar className="h-6 w-6 ring-2 ring-offset rounded p-0.25 ring-border after:border-none">
                         <AvatarImage
                           className={"rounded"}
                           src={`${item.liveURL}/favicon.ico`}

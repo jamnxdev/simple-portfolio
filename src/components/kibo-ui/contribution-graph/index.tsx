@@ -377,9 +377,12 @@ export const ContributionGraphCalendar = ({
   );
 
   return (
-    <article className={cn("w-full overflow-scroll", className)} {...props}>
+    <div
+      className={cn("w-full overflow-x-auto overflow-y-hidden", className)}
+      {...props}
+    >
       <svg
-        className="block h-auto w-full min-w-3xl"
+        className="block overflow-visible min-w-2xl sm:min-w-auto"
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
       >
@@ -411,7 +414,7 @@ export const ContributionGraphCalendar = ({
           }),
         )}
       </svg>
-    </article>
+    </div>
   );
 };
 
@@ -475,7 +478,7 @@ export const ContributionGraphLegend = ({
 
   return (
     <div
-      className={cn("ml-auto flex items-center gap-[3px]", className)}
+      className={cn("ml-auto flex items-center gap-0.75", className)}
       {...props}
     >
       <span className="mr-1 text-muted-foreground">

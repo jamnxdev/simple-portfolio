@@ -228,9 +228,9 @@ export default function Page() {
                   <CardTitle>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Avatar className="h-6 w-6 ring-2 ring-offset rounded p-0.25 ring-border">
+                        <Avatar className="h-6 w-6 ring-2 ring-offset rounded p-0.25 ring-border after:border-none">
                           <AvatarImage
-                            className={"rounded"}
+                            className={"rounded "}
                             src={`${item.liveURL}/favicon.ico`}
                           />
                         </Avatar>
@@ -289,7 +289,7 @@ export default function Page() {
       </div>
 
       {/* GITHUB CONTRIBUTION */}
-      <div className="w-full border-dashed p-1">
+      <div className="border-dashed m-2 border">
         <Suspense fallback={<GitHubContributionFallback />}>
           <GitHubContributionGraph contributions={contributions} />
         </Suspense>
