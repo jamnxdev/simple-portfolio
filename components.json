@@ -22,6 +22,6 @@
   },
   "registries": {
     "@ncdai": "https://chanhdai.com/r/{name}.json",
-    "@magicui": "https://magicui.design/r/{name}"
+    "@skiper-ui": "https://skiper-ui.com/registry/{name}.json"
   }
 }

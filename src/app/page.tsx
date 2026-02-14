@@ -270,7 +270,7 @@ export default function Page() {
         </div>
         <Link href={"/projects"}>
           <Button
-            className="outline-dashed outline-1 rounded group"
+            className="outline-dashed outline-1 border-0 rounded group"
             variant={"outline"}
           >
             <span className="relative inline-flex size-5">
