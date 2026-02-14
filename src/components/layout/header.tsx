@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { NAV_ITEMS } from "@/config/site";
-import { ThemeToggleButton, useThemeToggle } from "../ui/skiper26";
-import { cn } from "@/lib/utils";
-import { MoonIcon, SunIcon } from "@phosphor-icons/react/dist/ssr";
+import { useThemeToggle } from "../ui/skiper26";
+import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 
 export default function Header() {
   const { setIsDark, isDark, toggleTheme } = useThemeToggle({
@@ -33,13 +32,19 @@ export default function Header() {
               toggleTheme();
               setIsDark(!isDark);
             }}
-            className="cursor-pointer shadow-none"
+            className="cursor-pointer shadow-none group"
             variant={"outline"}
           >
             {isDark ? (
-              <SunIcon weight="duotone" />
+              <SunIcon
+                weight="duotone"
+                className="group-hover:rotate-45 group-hover:transition-all duration-300"
+              />
             ) : (
-              <MoonIcon weight="duotone" />
+              <MoonIcon
+                weight="duotone"
+                className="group-hover:rotate-15 group-hover:transition-all duration-250"
+              />
             )}
           </Button>
         </div>
