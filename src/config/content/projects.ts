@@ -1,6 +1,6 @@
 import { StatusProps } from "@/components/ui/status-indicator";
 
-type Project = {
+export type Project = {
   title: string;
   description: string;
   imgSRC: string;

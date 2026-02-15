@@ -9,7 +9,7 @@ import {
   TooltipRoot,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import type { Activity } from "@/components/kibo-ui/contribution-graph";
+import type { Activity } from "@/components/ui/contribution-graph";
 import {
   ContributionGraph,
   ContributionGraphBlock,
@@ -17,7 +17,7 @@ import {
   ContributionGraphFooter,
   ContributionGraphLegend,
   ContributionGraphTotalCount,
-} from "@/components/kibo-ui/contribution-graph";
+} from "@/components/ui/contribution-graph";
 import { SpinnerIcon } from "@phosphor-icons/react";
 import { addQueryParams, cn } from "@/lib/utils";
 

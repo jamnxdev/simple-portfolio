@@ -7,7 +7,7 @@ import { useThemeToggle } from "../ui/skiper26";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 
 export default function Header() {
-  const { setIsDark, isDark, toggleTheme } = useThemeToggle({
+  const { isDark, toggleTheme } = useThemeToggle({
     start: "top-down",
     variant: "rectangle",
   });
@@ -28,10 +28,7 @@ export default function Header() {
           ))}
           <Button
             type="button"
-            onClick={() => {
-              toggleTheme();
-              setIsDark(!isDark);
-            }}
+            onClick={toggleTheme}
             className="cursor-pointer shadow-none group"
             variant={"outline"}
           >
