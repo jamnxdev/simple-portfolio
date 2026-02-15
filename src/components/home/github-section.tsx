@@ -1,9 +1,11 @@
 import { Suspense } from "react";
+
+import { getGitHubContributions } from "@/lib/github-contribution";
+
 import {
   GitHubContributionFallback,
   GitHubContributionGraph,
 } from "../gh-contribution-graph";
-import { getGitHubContributions } from "@/lib/github-contribution";
 
 export default function GithubSection() {
   const contributions = getGitHubContributions();

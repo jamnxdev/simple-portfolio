@@ -1,8 +1,10 @@
-import { PROJECTS } from "@/config/content/projects";
-import ProjectCard from "../shared/project-card";
-import Link from "next/link";
-import { Button } from "../ui/button";
 import { CursorClickIcon, CursorIcon } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+
+import { PROJECTS } from "@/config/content/projects";
+
+import ProjectCard from "../shared/project-card";
+import { Button } from "../ui/button";
 
 export default function ProjectSections() {
   return (

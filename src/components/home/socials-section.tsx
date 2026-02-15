@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
+
 import { SOCIALS } from "@/config/content/socials";
+
+import { Button } from "../ui/button";
 
 export default function SocialSections() {
   return (

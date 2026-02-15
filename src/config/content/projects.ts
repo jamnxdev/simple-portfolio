@@ -1,4 +1,4 @@
-import { StatusProps } from "@/components/ui/status-indicator";
+import type { StatusProps } from "@/components/ui/status-indicator";
 
 export type Project = {
   title: string;

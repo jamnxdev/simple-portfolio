@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 import { EXPERIENCE } from "@/config/content/experience";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import Image from "next/image";
 import { Badge } from "../ui/badge";
 
 export default function ExperienceSection() {

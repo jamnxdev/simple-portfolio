@@ -1,10 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { NAV_ITEMS } from "@/config/site";
-import { useThemeToggle } from "../ui/skiper26";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
+import Link from "next/link";
+
+import { NAV_ITEMS } from "@/config/site";
+
+import { Button } from "../ui/button";
+import { useThemeToggle } from "../ui/skiper26";
 
 export default function Header() {
   const { isDark, toggleTheme } = useThemeToggle({

@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { GripHorizontal } from "lucide-react";
-import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useState } from "react";
+import { motion } from "framer-motion"
+import { GripHorizontal } from "lucide-react"
+import { useTheme } from "next-themes"
+import { useCallback, useEffect, useState } from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 const Skiper26 = () => {
-  const [variant, setVariant] = useState<AnimationVariant>("rectangle");
-  const [start, setStart] = useState<AnimationStart>("bottom-up");
-  const [blur, setBlur] = useState<boolean>(false);
-  const [gifType, setGifType] = useState<"1" | "2" | "3" | "custom">("1");
+  const [variant, setVariant] = useState<AnimationVariant>("rectangle")
+  const [start, setStart] = useState<AnimationStart>("bottom-up")
+  const [blur, setBlur] = useState<boolean>(false)
+  const [gifType, setGifType] = useState<"1" | "2" | "3" | "custom">("1")
   const [gifUrl, setGifUrl] = useState<string>(
-    "https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif?cid=790b76112m5eeeydoe7et0cr3j3ekb1erunxozyshuhxx2vl&ep=v1_stickers_search&rid=giphy.gif&ct=s",
-  );
+    "https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif?cid=790b76112m5eeeydoe7et0cr3j3ekb1erunxozyshuhxx2vl&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+  )
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center">
@@ -40,8 +40,8 @@ const Skiper26 = () => {
         </p>
       </div>
 
-      <div className="text-foreground grid content-start justify-items-center gap-6 py-20 text-center">
-        <span className="after:from-background after:to-foreground relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:content-['']">
+      <div className="grid content-start justify-items-center gap-6 py-20 text-center text-foreground">
+        <span className="relative max-w-[12ch] text-xs leading-tight uppercase opacity-40 after:absolute after:top-full after:left-1/2 after:h-16 after:w-px after:bg-gradient-to-b after:from-background after:to-foreground after:content-['']">
           Click to toggle the theme
         </span>
       </div>
@@ -65,10 +65,10 @@ const Skiper26 = () => {
         setGifUrl={setGifUrl}
       />
     </div>
-  );
-};
+  )
+}
 
-export { Skiper26 };
+export { Skiper26 }
 
 const Options = ({
   variant,
@@ -82,21 +82,21 @@ const Options = ({
   setGifType,
   setGifUrl,
 }: {
-  variant: AnimationVariant;
-  start: AnimationStart;
-  blur: boolean;
-  gifType: "1" | "2" | "3" | "custom";
-  gifUrl: string;
-  setVariant: (variant: AnimationVariant) => void;
-  setStart: (start: AnimationStart) => void;
-  setBlur: (blur: boolean) => void;
-  setGifType: (type: "1" | "2" | "3" | "custom") => void;
-  setGifUrl: (url: string) => void;
+  variant: AnimationVariant
+  start: AnimationStart
+  blur: boolean
+  gifType: "1" | "2" | "3" | "custom"
+  gifUrl: string
+  setVariant: (variant: AnimationVariant) => void
+  setStart: (start: AnimationStart) => void
+  setBlur: (blur: boolean) => void
+  setGifType: (type: "1" | "2" | "3" | "custom") => void
+  setGifUrl: (url: string) => void
 }) => {
   return (
     <motion.div
       drag
-      className="top-30 border-foreground/10 bg-muted2 absolute right-1/2 flex w-[245px] translate-x-1/2 flex-col gap-3 rounded-3xl border p-3 backdrop-blur-sm lg:right-4 lg:translate-x-0"
+      className="bg-muted2 absolute top-30 right-1/2 flex w-[245px] translate-x-1/2 flex-col gap-3 rounded-3xl border border-foreground/10 p-3 backdrop-blur-sm lg:right-4 lg:translate-x-0"
     >
       <div className="flex items-center justify-between">
         <span className="size-4 cursor-grab active:cursor-grabbing">
@@ -110,7 +110,7 @@ const Options = ({
 
       <div className="flex flex-col">
         <div className="mt-1 flex justify-between py-1">
-          <p className="w-20 whitespace-nowrap text-sm opacity-50">variant :</p>
+          <p className="w-20 text-sm whitespace-nowrap opacity-50">variant :</p>
           <div className="flex flex-wrap items-center justify-end gap-1">
             <button
               onClick={() => setVariant("circle")}
@@ -118,7 +118,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 variant === "circle"
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               circle
@@ -129,7 +129,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 variant === "rectangle"
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               rectangle
@@ -140,7 +140,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 variant === "gif"
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               gif
@@ -151,7 +151,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 variant === "polygon"
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               polygon
@@ -162,7 +162,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 variant === "circle-blur"
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               circle-blur
@@ -171,7 +171,7 @@ const Options = ({
         </div>
 
         <div className="mt-1 flex justify-between py-1">
-          <p className="w-20 whitespace-nowrap text-sm opacity-50">blur :</p>
+          <p className="w-20 text-sm whitespace-nowrap opacity-50">blur :</p>
           <div className="flex flex-wrap items-center justify-end gap-1">
             <button
               onClick={() => setBlur(false)}
@@ -179,7 +179,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 !blur
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               off
@@ -190,7 +190,7 @@ const Options = ({
                 "cursor-pointer px-1 text-sm transition-opacity",
                 blur
                   ? "opacity-100"
-                  : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                  : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
               )}
             >
               on
@@ -204,7 +204,7 @@ const Options = ({
           variant === "polygon" ||
           variant === "circle-blur") && (
           <div className="mt-1 flex justify-between py-1">
-            <p className="w-20 whitespace-nowrap text-sm opacity-50">start :</p>
+            <p className="w-20 text-sm whitespace-nowrap opacity-50">start :</p>
             <div className="flex flex-wrap items-center justify-end gap-1">
               {/* Show center option only for circle and circle-blur */}
               {(variant === "circle" || variant === "circle-blur") && (
@@ -214,7 +214,7 @@ const Options = ({
                     "cursor-pointer px-1 text-sm transition-opacity",
                     start === "center"
                       ? "opacity-100"
-                      : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                      : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                   )}
                 >
                   center
@@ -230,7 +230,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "bottom-up"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     bottom-up
@@ -241,7 +241,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "top-down"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     top-down
@@ -252,7 +252,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "left-right"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     left-right
@@ -263,7 +263,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "right-left"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     right-left
@@ -282,7 +282,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "top-left"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     top-left
@@ -293,7 +293,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "top-right"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     top-right
@@ -307,7 +307,7 @@ const Options = ({
                           "cursor-pointer px-1 text-sm transition-opacity",
                           start === "bottom-left"
                             ? "opacity-100"
-                            : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                            : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                         )}
                       >
                         bottom-left
@@ -318,7 +318,7 @@ const Options = ({
                           "cursor-pointer px-1 text-sm transition-opacity",
                           start === "bottom-right"
                             ? "opacity-100"
-                            : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                            : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                         )}
                       >
                         bottom-right
@@ -337,7 +337,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "top-center"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     top-center
@@ -348,7 +348,7 @@ const Options = ({
                       "cursor-pointer px-1 text-sm transition-opacity",
                       start === "bottom-center"
                         ? "opacity-100"
-                        : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                        : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                     )}
                   >
                     bottom-center
@@ -366,48 +366,48 @@ const Options = ({
             <div className="flex flex-wrap items-center justify-end gap-1">
               <button
                 onClick={() => {
-                  setGifType("1");
+                  setGifType("1")
                   setGifUrl(
-                    "https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif?cid=790b76112m5eeeydoe7et0cr3j3ekb1erunxozyshuhxx2vl&ep=v1_stickers_search&rid=giphy.gif&ct=s",
-                  );
+                    "https://media.giphy.com/media/KBbr4hHl9DSahKvInO/giphy.gif?cid=790b76112m5eeeydoe7et0cr3j3ekb1erunxozyshuhxx2vl&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+                  )
                 }}
                 className={cn(
                   "cursor-pointer px-1 text-sm transition-opacity",
                   gifType === "1"
                     ? "opacity-100"
-                    : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                    : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                 )}
               >
                 1
               </button>
               <button
                 onClick={() => {
-                  setGifType("2");
+                  setGifType("2")
                   setGifUrl(
-                    "https://media.giphy.com/media/5PncuvcXbBuIZcSiQo/giphy.gif?cid=ecf05e47j7vdjtytp3fu84rslaivdun4zvfhej6wlvl6qqsz&ep=v1_stickers_search&rid=giphy.gif&ct=s",
-                  );
+                    "https://media.giphy.com/media/5PncuvcXbBuIZcSiQo/giphy.gif?cid=ecf05e47j7vdjtytp3fu84rslaivdun4zvfhej6wlvl6qqsz&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+                  )
                 }}
                 className={cn(
                   "cursor-pointer px-1 text-sm transition-opacity",
                   gifType === "2"
                     ? "opacity-100"
-                    : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                    : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                 )}
               >
                 2
               </button>
               <button
                 onClick={() => {
-                  setGifType("3");
+                  setGifType("3")
                   setGifUrl(
-                    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3JwcXdzcHd5MW92NWprZXVpcTBtNXM5cG9obWh0N3I4NzFpaDE3byZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/WgsVx6C4N8tjy/giphy.gif",
-                  );
+                    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3JwcXdzcHd5MW92NWprZXVpcTBtNXM5cG9obWh0N3I4NzFpaDE3byZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/WgsVx6C4N8tjy/giphy.gif"
+                  )
                 }}
                 className={cn(
                   "cursor-pointer px-1 text-sm transition-opacity",
                   gifType === "3"
                     ? "opacity-100"
-                    : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                    : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                 )}
               >
                 3
@@ -418,7 +418,7 @@ const Options = ({
                   "cursor-pointer px-1 text-sm transition-opacity",
                   gifType === "custom"
                     ? "opacity-100"
-                    : "hover:bg-foreground/10 opacity-50 hover:opacity-100",
+                    : "opacity-50 hover:bg-foreground/10 hover:opacity-100"
                 )}
               >
                 custom
@@ -436,14 +436,14 @@ const Options = ({
               value={gifUrl}
               onChange={(e) => setGifUrl(e.target.value)}
               placeholder="Enter GIF URL"
-              className="text-foreground placeholder:text-foreground/50 w-full rounded-lg bg-transparent px-2 py-1 text-xs focus:outline-none"
+              className="w-full rounded-lg bg-transparent px-2 py-1 text-xs text-foreground placeholder:text-foreground/50 focus:outline-none"
             />
           </div>
         )}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
 // ///////////////////////////////////////////////////////////////////////////
 // Custom hook for theme toggle functionality
@@ -453,55 +453,55 @@ export const useThemeToggle = ({
   blur = false,
   gifUrl = "",
 }: {
-  variant?: AnimationVariant;
-  start?: AnimationStart;
-  blur?: boolean;
-  gifUrl?: string;
+  variant?: AnimationVariant
+  start?: AnimationStart
+  blur?: boolean
+  gifUrl?: string
 } = {}) => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false)
 
   // Sync isDark state with resolved theme after hydration
   useEffect(() => {
-    setIsDark(resolvedTheme === "dark");
-  }, [resolvedTheme]);
+    setIsDark(resolvedTheme === "dark")
+  }, [resolvedTheme])
 
-  const styleId = "theme-transition-styles";
+  const styleId = "theme-transition-styles"
 
   const updateStyles = useCallback((css: string, name: string) => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
-    let styleElement = document.getElementById(styleId) as HTMLStyleElement;
+    let styleElement = document.getElementById(styleId) as HTMLStyleElement
 
     if (!styleElement) {
-      styleElement = document.createElement("style");
-      styleElement.id = styleId;
-      document.head.appendChild(styleElement);
+      styleElement = document.createElement("style")
+      styleElement.id = styleId
+      document.head.appendChild(styleElement)
     }
 
-    styleElement.textContent = css;
-  }, []);
+    styleElement.textContent = css
+  }, [])
 
   const toggleTheme = useCallback(() => {
-    setIsDark(!isDark);
+    setIsDark(!isDark)
 
-    const animation = createAnimation(variant, start, blur, gifUrl);
+    const animation = createAnimation(variant, start, blur, gifUrl)
 
-    updateStyles(animation.css, animation.name);
+    updateStyles(animation.css, animation.name)
 
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
     const switchTheme = () => {
-      setTheme(theme === "light" ? "dark" : "light");
-    };
-
-    if (!document.startViewTransition) {
-      switchTheme();
-      return;
+      setTheme(theme === "light" ? "dark" : "light")
     }
 
-    document.startViewTransition(switchTheme);
+    if (!document.startViewTransition) {
+      switchTheme()
+      return
+    }
+
+    document.startViewTransition(switchTheme)
   }, [
     theme,
     setTheme,
@@ -512,74 +512,74 @@ export const useThemeToggle = ({
     updateStyles,
     isDark,
     setIsDark,
-  ]);
+  ])
 
   const setCrazyLightTheme = useCallback(() => {
-    setIsDark(false);
+    setIsDark(false)
 
-    const animation = createAnimation(variant, start, blur, gifUrl);
+    const animation = createAnimation(variant, start, blur, gifUrl)
 
-    updateStyles(animation.css, animation.name);
+    updateStyles(animation.css, animation.name)
 
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
     const switchTheme = () => {
-      setTheme("light");
-    };
-
-    if (!document.startViewTransition) {
-      switchTheme();
-      return;
+      setTheme("light")
     }
 
-    document.startViewTransition(switchTheme);
-  }, [setTheme, variant, start, blur, gifUrl, updateStyles, setIsDark]);
+    if (!document.startViewTransition) {
+      switchTheme()
+      return
+    }
+
+    document.startViewTransition(switchTheme)
+  }, [setTheme, variant, start, blur, gifUrl, updateStyles, setIsDark])
 
   const setCrazyDarkTheme = useCallback(() => {
-    setIsDark(true);
+    setIsDark(true)
 
-    const animation = createAnimation(variant, start, blur, gifUrl);
+    const animation = createAnimation(variant, start, blur, gifUrl)
 
-    updateStyles(animation.css, animation.name);
+    updateStyles(animation.css, animation.name)
 
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
     const switchTheme = () => {
-      setTheme("dark");
-    };
-
-    if (!document.startViewTransition) {
-      switchTheme();
-      return;
+      setTheme("dark")
     }
 
-    document.startViewTransition(switchTheme);
-  }, [setTheme, variant, start, blur, gifUrl, updateStyles, setIsDark]);
+    if (!document.startViewTransition) {
+      switchTheme()
+      return
+    }
+
+    document.startViewTransition(switchTheme)
+  }, [setTheme, variant, start, blur, gifUrl, updateStyles, setIsDark])
 
   const setCrazySystemTheme = useCallback(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
     // Check system preference for dark mode
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    setIsDark(prefersDark);
+      "(prefers-color-scheme: dark)"
+    ).matches
+    setIsDark(prefersDark)
 
-    const animation = createAnimation(variant, start, blur, gifUrl);
+    const animation = createAnimation(variant, start, blur, gifUrl)
 
-    updateStyles(animation.css, animation.name);
+    updateStyles(animation.css, animation.name)
 
     const switchTheme = () => {
-      setTheme("system");
-    };
-
-    if (!document.startViewTransition) {
-      switchTheme();
-      return;
+      setTheme("system")
     }
 
-    document.startViewTransition(switchTheme);
-  }, [setTheme, variant, start, blur, gifUrl, updateStyles, setIsDark]);
+    if (!document.startViewTransition) {
+      switchTheme()
+      return
+    }
+
+    document.startViewTransition(switchTheme)
+  }, [setTheme, variant, start, blur, gifUrl, updateStyles, setIsDark])
 
   return {
     isDark,
@@ -588,8 +588,8 @@ export const useThemeToggle = ({
     setCrazyLightTheme,
     setCrazyDarkTheme,
     setCrazySystemTheme,
-  };
-};
+  }
+}
 
 // ///////////////////////////////////////////////////////////////////////////
 
@@ -600,25 +600,25 @@ export const ThemeToggleButton = ({
   blur = false,
   gifUrl = "",
 }: {
-  className?: string;
-  variant?: AnimationVariant;
-  start?: AnimationStart;
-  blur?: boolean;
-  gifUrl?: string;
+  className?: string
+  variant?: AnimationVariant
+  start?: AnimationStart
+  blur?: boolean
+  gifUrl?: string
 }) => {
   const { isDark, toggleTheme } = useThemeToggle({
     variant,
     start,
     blur,
     gifUrl,
-  });
+  })
 
   return (
     <button
       type="button"
       className={cn(
         "size-10 cursor-pointer rounded-full bg-black p-0 transition-all duration-300 active:scale-95",
-        className,
+        className
       )}
       onClick={toggleTheme}
       aria-label="Toggle theme"
@@ -646,8 +646,8 @@ export const ThemeToggleButton = ({
         />
       </svg>
     </button>
-  );
-};
+  )
+}
 
 // ///////////////////////////////////////////////////////////////////////////
 
@@ -656,7 +656,7 @@ export type AnimationVariant =
   | "rectangle"
   | "gif"
   | "polygon"
-  | "circle-blur";
+  | "circle-blur"
 export type AnimationStart =
   | "top-left"
   | "top-right"
@@ -668,99 +668,99 @@ export type AnimationStart =
   | "bottom-up"
   | "top-down"
   | "left-right"
-  | "right-left";
+  | "right-left"
 
 interface Animation {
-  name: string;
-  css: string;
+  name: string
+  css: string
 }
 
 const getPositionCoords = (position: AnimationStart) => {
   switch (position) {
     case "top-left":
-      return { cx: "0", cy: "0" };
+      return { cx: "0", cy: "0" }
     case "top-right":
-      return { cx: "40", cy: "0" };
+      return { cx: "40", cy: "0" }
     case "bottom-left":
-      return { cx: "0", cy: "40" };
+      return { cx: "0", cy: "40" }
     case "bottom-right":
-      return { cx: "40", cy: "40" };
+      return { cx: "40", cy: "40" }
     case "top-center":
-      return { cx: "20", cy: "0" };
+      return { cx: "20", cy: "0" }
     case "bottom-center":
-      return { cx: "20", cy: "40" };
+      return { cx: "20", cy: "40" }
     // For directional positions, default to center (these are used for rectangle variant)
     case "bottom-up":
     case "top-down":
     case "left-right":
     case "right-left":
-      return { cx: "20", cy: "20" };
+      return { cx: "20", cy: "20" }
   }
-};
+}
 
 const generateSVG = (variant: AnimationVariant, start: AnimationStart) => {
   // circle-blur variant handles center case differently, so check it first
   if (variant === "circle-blur") {
     if (start === "center") {
-      return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>`;
+      return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>`
     }
-    const positionCoords = getPositionCoords(start);
+    const positionCoords = getPositionCoords(start)
     if (!positionCoords) {
-      throw new Error(`Invalid start position: ${start}`);
+      throw new Error(`Invalid start position: ${start}`)
     }
-    const { cx, cy } = positionCoords;
-    return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="${cx}" cy="${cy}" r="18" fill="white" filter="url(%23blur)"/></svg>`;
+    const { cx, cy } = positionCoords
+    return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="${cx}" cy="${cy}" r="18" fill="white" filter="url(%23blur)"/></svg>`
   }
 
-  if (start === "center") return;
+  if (start === "center") return
 
   // Rectangle variant doesn't use SVG masks, so return early
-  if (variant === "rectangle") return "";
+  if (variant === "rectangle") return ""
 
-  const positionCoords = getPositionCoords(start);
+  const positionCoords = getPositionCoords(start)
   if (!positionCoords) {
-    throw new Error(`Invalid start position: ${start}`);
+    throw new Error(`Invalid start position: ${start}`)
   }
-  const { cx, cy } = positionCoords;
+  const { cx, cy } = positionCoords
 
   if (variant === "circle") {
-    return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="${cx}" cy="${cy}" r="20" fill="white"/></svg>`;
+    return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="${cx}" cy="${cy}" r="20" fill="white"/></svg>`
   }
 
-  return "";
-};
+  return ""
+}
 
 const getTransformOrigin = (start: AnimationStart) => {
   switch (start) {
     case "top-left":
-      return "top left";
+      return "top left"
     case "top-right":
-      return "top right";
+      return "top right"
     case "bottom-left":
-      return "bottom left";
+      return "bottom left"
     case "bottom-right":
-      return "bottom right";
+      return "bottom right"
     case "top-center":
-      return "top center";
+      return "top center"
     case "bottom-center":
-      return "bottom center";
+      return "bottom center"
     // For directional positions, default to center
     case "bottom-up":
     case "top-down":
     case "left-right":
     case "right-left":
-      return "center";
+      return "center"
   }
-};
+}
 
 export const createAnimation = (
   variant: AnimationVariant,
   start: AnimationStart = "center",
   blur = false,
-  url?: string,
+  url?: string
 ): Animation => {
-  const svg = generateSVG(variant, start);
-  const transformOrigin = getTransformOrigin(start);
+  const svg = generateSVG(variant, start)
+  const transformOrigin = getTransformOrigin(start)
 
   if (variant === "rectangle") {
     const getClipPath = (direction: AnimationStart) => {
@@ -769,51 +769,51 @@ export const createAnimation = (
           return {
             from: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "top-down":
           return {
             from: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "left-right":
           return {
             from: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "right-left":
           return {
             from: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "top-left":
           return {
             from: "polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "top-right":
           return {
             from: "polygon(100% 0%, 100% 0%, 100% 0%, 100% 0%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "bottom-left":
           return {
             from: "polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         case "bottom-right":
           return {
             from: "polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
         default:
           return {
             from: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
             to: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          };
+          }
       }
-    };
+    }
 
-    const clipPath = getClipPath(start);
+    const clipPath = getClipPath(start)
 
     return {
       name: `${variant}-${start}${blur ? "-blur" : ""}`,
@@ -862,7 +862,7 @@ export const createAnimation = (
         }
       }
       `,
-    };
+    }
   }
   if (variant === "circle" && start == "center") {
     return {
@@ -912,7 +912,7 @@ export const createAnimation = (
         }
       }
       `,
-    };
+    }
   }
   if (variant === "gif") {
     return {
@@ -946,7 +946,7 @@ export const createAnimation = (
     mask-size: 2000vmax;
   }
 }`,
-    };
+    }
   }
 
   if (variant === "circle-blur") {
@@ -978,7 +978,7 @@ export const createAnimation = (
           }
         }
         `,
-      };
+      }
     }
 
     return {
@@ -1008,7 +1008,7 @@ export const createAnimation = (
         }
       }
       `,
-    };
+    }
   }
 
   if (variant === "polygon") {
@@ -1020,14 +1020,14 @@ export const createAnimation = (
             darkTo: "polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%)",
             lightFrom: "polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%)",
             lightTo: "polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%)",
-          };
+          }
         case "top-right":
           return {
             darkFrom: "polygon(150% -71%, 250% 71%, 250% 71%, 150% -71%)",
             darkTo: "polygon(150% -71%, 250% 71%, 50% 171%, -71% 50%)",
             lightFrom: "polygon(-71% 50%, 50% 171%, 50% 171%, -71% 50%)",
             lightTo: "polygon(-71% 50%, 50% 171%, 250% 71%, 150% -71%)",
-          };
+          }
         default:
           // Default to top-left behavior
           return {
@@ -1035,11 +1035,11 @@ export const createAnimation = (
             darkTo: "polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%)",
             lightFrom: "polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%)",
             lightTo: "polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%)",
-          };
+          }
       }
-    };
+    }
 
-    const clipPaths = getPolygonClipPaths(start);
+    const clipPaths = getPolygonClipPaths(start)
 
     return {
       name: `${variant}-${start}${blur ? "-blur" : ""}`,
@@ -1088,7 +1088,7 @@ export const createAnimation = (
         }
       }
       `,
-    };
+    }
   }
 
   // Handle circle variants with start positions using clip-path
@@ -1096,23 +1096,23 @@ export const createAnimation = (
     const getClipPathPosition = (position: AnimationStart) => {
       switch (position) {
         case "top-left":
-          return "0% 0%";
+          return "0% 0%"
         case "top-right":
-          return "100% 0%";
+          return "100% 0%"
         case "bottom-left":
-          return "0% 100%";
+          return "0% 100%"
         case "bottom-right":
-          return "100% 100%";
+          return "100% 100%"
         case "top-center":
-          return "50% 0%";
+          return "50% 0%"
         case "bottom-center":
-          return "50% 100%";
+          return "50% 100%"
         default:
-          return "50% 50%";
+          return "50% 50%"
       }
-    };
+    }
 
-    const clipPosition = getClipPathPosition(start);
+    const clipPosition = getClipPathPosition(start)
 
     return {
       name: `${variant}-${start}${blur ? "-blur" : ""}`,
@@ -1161,7 +1161,7 @@ export const createAnimation = (
         }
       }
       `,
-    };
+    }
   }
 
   return {
@@ -1194,8 +1194,8 @@ export const createAnimation = (
         }
       }
     `,
-  };
-};
+  }
+}
 
 /**
  * Skiper 26 Theme_buttons_002 — React + CSS + transition view api  https://developer.chrome.com/docs/web-platform/view-transitions/

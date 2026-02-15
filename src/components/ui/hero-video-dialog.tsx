@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { PlayIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
+import { useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { PlayIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
+
 import { Button } from "./button";
-import Image from "next/image";
 
 type AnimationStyle =
   | "from-bottom"

@@ -1,14 +1,9 @@
 "use client";
 
+import { SpinnerIcon } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { use } from "react";
 
-import {
-  TooltipContent,
-  TooltipProvider,
-  TooltipRoot,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import type { Activity } from "@/components/ui/contribution-graph";
 import {
   ContributionGraph,
@@ -18,7 +13,12 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/ui/contribution-graph";
-import { SpinnerIcon } from "@phosphor-icons/react";
+import {
+  TooltipContent,
+  TooltipProvider,
+  TooltipRoot,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { addQueryParams, cn } from "@/lib/utils";
 
 export function GitHubContributionGraph({

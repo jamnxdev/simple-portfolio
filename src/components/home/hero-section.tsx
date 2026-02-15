@@ -1,6 +1,8 @@
 import { GrainGradient } from "@paper-design/shaders-react";
-import { FlipSentences } from "../shared/flip-sentences";
+
 import { USER } from "@/config/content/user";
+
+import { FlipSentences } from "../shared/flip-sentences";
 
 const gradientConfig = {
   width: 1280,

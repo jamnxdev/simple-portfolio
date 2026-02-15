@@ -1,5 +1,6 @@
-import { USER } from "@/config/content/user";
-import { DotIcon } from "@phosphor-icons/react/dist/ssr";
+import { DotIcon } from "@phosphor-icons/react/dist/ssr"
+
+import { USER } from "@/config/content/user"
 
 export default function AboutSection() {
   return (
@@ -15,5 +16,5 @@ export default function AboutSection() {
         ))}
       </div>
     </div>
-  );
+  )
 }

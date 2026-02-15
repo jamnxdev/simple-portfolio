@@ -8,6 +8,7 @@ import {
   XLogoIcon,
   YoutubeLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
+
 import { USER } from "./user";
 
 export const SOCIALS = [
