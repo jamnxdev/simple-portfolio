@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   const status =
     project.status.charAt(0).toUpperCase() + project.status.slice(1)
   return (
-    <Card className="relative! mx-auto w-full gap-2 rounded border border-dashed p-2 pt-0 shadow-none ring-0">
+    <Card className="relative! mx-auto w-full gap-2 rounded border border-dashed p-2 shadow-none ring-0">
       <HeroVideoDialog
         className="ring-offset aspect-video rounded p-0.25 ring-2 ring-border"
         animationStyle="from-center"
