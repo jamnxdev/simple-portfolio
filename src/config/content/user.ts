@@ -9,4 +9,38 @@ export const USER = {
     "I’m not a designer, but I have a sharp eye for creating visually appealing experiences.",
   ],
   flipSentences: ["Software Engineer", "Freelancer", "Builder"],
+  toolNTech: [
+    { name: "C", icon: "https://skillicons.dev/icons?i=c" },
+    { name: "C++", icon: "https://skillicons.dev/icons?i=cpp" },
+    { name: "HTML5", icon: "https://skillicons.dev/icons?i=html" },
+    { name: "CSS3", icon: "https://skillicons.dev/icons?i=css" },
+    { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
+    { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
+    { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
+    { name: "Python", icon: "https://skillicons.dev/icons?i=py" },
+    {
+      name: "Prettier",
+      icon: "https://cdn.simpleicons.org/prettier/F7B93E",
+    },
+    { name: "React", icon: "https://skillicons.dev/icons?i=react" },
+    { name: "Next.js", icon: "https://skillicons.dev/icons?i=nextjs" },
+    { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
+    { name: "Express.js", icon: "https://skillicons.dev/icons?i=express" },
+    { name: "Redis", icon: "https://skillicons.dev/icons?i=redis" },
+    {
+      name: "PostgreSQL",
+      icon: "https://skillicons.dev/icons?i=postgres",
+    },
+    { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
+    { name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
+    { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
+    { name: "Nginx", icon: "https://skillicons.dev/icons?i=nginx" },
+    { name: "VS Code", icon: "https://skillicons.dev/icons?i=vscode" },
+    {
+      name: "Android",
+      icon: "https://skillicons.dev/icons?i=androidstudio",
+    },
+    { name: "Blender", icon: "https://skillicons.dev/icons?i=blender" },
+    { name: "Linux", icon: "https://skillicons.dev/icons?i=linux" },
+  ]
 };
