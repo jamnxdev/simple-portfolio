@@ -46,9 +46,9 @@ export default function NotFound() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="flex items-baseline font-mono text-8xl font-bold tracking-tighter drop-shadow-lg sm:text-9xl">
+          <span className="flex items-center font-mono text-8xl font-bold tracking-tighter drop-shadow-lg sm:text-9xl">
             4
-            <SmileyXEyesIcon weight="duotone" className="text-8xl" />4
+            <SmileyXEyesIcon weight="duotone" className="text-7xl" />4
           </span>
           <span className="font-mono text-sm tracking-[0.3em] uppercase">
             Not found
