@@ -1,4 +1,5 @@
 import AboutSection from "@/components/home/about-section"
+import BlogsSection from "@/components/home/blogs-section"
 import ExperienceSection from "@/components/home/experience-section"
 import GithubSection from "@/components/home/github-section"
 import HeroSection from "@/components/home/hero-section"
@@ -16,6 +17,7 @@ export default function Page() {
       <ProjectSections />
       <GithubSection />
       <ToolsTechSection />
+      <BlogsSection />
     </>
   )
 }
