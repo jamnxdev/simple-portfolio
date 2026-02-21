@@ -1,7 +1,7 @@
 "use client"
 
+import { DotsSixIcon } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
-import { GripHorizontal } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useState } from "react"
 
@@ -100,7 +100,7 @@ const Options = ({
     >
       <div className="flex items-center justify-between">
         <span className="size-4 cursor-grab active:cursor-grabbing">
-          <GripHorizontal className="size-4 opacity-50" />
+          <DotsSixIcon weight="duotone" className="size-4 opacity-50" />
         </span>
 
         <p className="group flex cursor-pointer items-center justify-center gap-1 rounded-lg px-2 py-1 text-sm opacity-50">
