@@ -42,5 +42,5 @@ export const USER = {
     },
     { name: "Blender", icon: "https://skillicons.dev/icons?i=blender" },
     { name: "Linux", icon: "https://skillicons.dev/icons?i=linux" },
-  ]
-};
+  ],
+}

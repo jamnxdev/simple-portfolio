@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { SpinnerIcon } from "@phosphor-icons/react";
-import { format } from "date-fns";
-import { use } from "react";
+import { SpinnerIcon } from "@phosphor-icons/react"
+import { format } from "date-fns"
+import { use } from "react"
 
-import type { Activity } from "@/components/ui/contribution-graph";
+import type { Activity } from "@/components/ui/contribution-graph"
 import {
   ContributionGraph,
   ContributionGraphBlock,
@@ -12,21 +12,21 @@ import {
   ContributionGraphFooter,
   ContributionGraphLegend,
   ContributionGraphTotalCount,
-} from "@/components/ui/contribution-graph";
+} from "@/components/ui/contribution-graph"
 import {
   TooltipContent,
   TooltipProvider,
   TooltipRoot,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { addQueryParams, cn } from "@/lib/utils";
+} from "@/components/ui/tooltip"
+import { addQueryParams, cn } from "@/lib/utils"
 
 export function GitHubContributionGraph({
   contributions,
 }: {
-  contributions: Promise<Activity[]>;
+  contributions: Promise<Activity[]>
 }) {
-  const data = use(contributions);
+  const data = use(contributions)
 
   return (
     <TooltipProvider>
@@ -53,7 +53,7 @@ export function GitHubContributionGraph({
                     'data-[level="1"]:fill-[#0c0c0c]/20 dark:data-[level="1"]:fill-[#ffffff]/20',
                     'data-[level="2"]:fill-[#0c0c0c]/50 dark:data-[level="2"]:fill-[#ffffff]/50',
                     'data-[level="3"]:fill-[#0c0c0c]/70 dark:data-[level="3"]:fill-[#ffffff]/70',
-                    'data-[level="4"]:fill-[#0c0c0c]/90 dark:data-[level="4"]:fill-[#ffffff]/90',
+                    'data-[level="4"]:fill-[#0c0c0c]/90 dark:data-[level="4"]:fill-[#ffffff]/90'
                   )}
                 />
               </TooltipTrigger>
@@ -92,7 +92,7 @@ export function GitHubContributionGraph({
         </ContributionGraphFooter>
       </ContributionGraph>
     </TooltipProvider>
-  );
+  )
 }
 
 export function GitHubContributionFallback() {
@@ -103,5 +103,5 @@ export function GitHubContributionFallback() {
         className="animate-spin text-muted-foreground"
       />
     </div>
-  );
+  )
 }

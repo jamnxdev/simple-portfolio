@@ -7,9 +7,9 @@ import {
   MediumLogoIcon,
   XLogoIcon,
   YoutubeLogoIcon,
-} from "@phosphor-icons/react/dist/ssr";
+} from "@phosphor-icons/react/dist/ssr"
 
-import { USER } from "./user";
+import { USER } from "./user"
 
 export const SOCIALS = [
   {
@@ -60,4 +60,4 @@ export const SOCIALS = [
     icon: LinkIcon,
     hoverColor: "#00b386",
   },
-];
+]

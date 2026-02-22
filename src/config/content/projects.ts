@@ -1,16 +1,16 @@
-import type { StatusProps } from "@/components/ui/status-indicator";
+import type { StatusProps } from "@/components/ui/status-indicator"
 
 export type Project = {
-  title: string;
-  description: string;
-  imgSRC: string;
-  videoSRC: string;
-  status: StatusProps["status"];
-  liveURL: string;
-  backupLiveURL?: string;
-  githubURL: string;
-  toolsNTech: string[];
-};
+  title: string
+  description: string
+  imgSRC: string
+  videoSRC: string
+  status: StatusProps["status"]
+  liveURL: string
+  backupLiveURL?: string
+  githubURL: string
+  toolsNTech: string[]
+}
 
 export const PROJECTS: Project[] = [
   {
@@ -138,4 +138,4 @@ export const PROJECTS: Project[] = [
       "Redis",
     ],
   },
-];
+]

@@ -44,4 +44,4 @@ export const EXPERIENCE = [
     leaveDate: "01-06-2024",
     type: "On-Site",
   },
-];
+]
