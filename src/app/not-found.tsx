@@ -31,7 +31,7 @@ import { Button } from "@/components/ui/button"
 
 export default function NotFound() {
   return (
-    <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden border-b-2 border-dashed">
       {/* <div className="absolute inset-0 -z-10">
         <GodRays
           {...gradientConfig}

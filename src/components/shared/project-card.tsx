@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   const status =
     project.status.charAt(0).toUpperCase() + project.status.slice(1)
   return (
-    <Card className="relative! mx-auto w-full gap-2 rounded border border-dashed p-2 shadow-none ring-0">
+    <Card className="relative! mx-auto w-full gap-2 border border-dashed p-2 ring-0">
       <HeroVideoDialog
         className="ring-offset aspect-video rounded p-0.25 ring-2 ring-border"
         animationStyle="from-center"
@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
             <Tooltip>
               <TooltipTrigger className={"cursor-pointer"}>
-                <Status status={project.status}>
+                <Status status={project.status} className="rounded">
                   <StatusIndicator />
                 </Status>
               </TooltipTrigger>
@@ -50,7 +50,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.toolsNTech &&
             project.toolsNTech.length > 0 &&
             project.toolsNTech.map((tech, idx) => (
-              <Badge key={idx} variant={"secondary"} className="rounded">
+              <Badge key={idx} variant={"secondary"}>
                 {tech}
               </Badge>
             ))}

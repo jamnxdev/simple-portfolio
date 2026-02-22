@@ -9,7 +9,7 @@ export default async function BlogsPage() {
   const posts = await getMediumPosts()
 
   return (
-    <div className="flex flex-col items-center gap-2 p-2">
+    <div className="flex flex-1 flex-col items-center gap-2 border-b-2 border-dashed p-2">
       <div className="flex w-full max-w-4xl flex-col gap-2">
         {posts.map((post) => (
           <BlogListItem post={post} key={post.link} />
@@ -21,7 +21,7 @@ export default async function BlogsPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="rounded border-dashed outline-1">
+          <Button variant="outline" className="border-dashed outline-1">
             View all on Medium
           </Button>
         </Link>

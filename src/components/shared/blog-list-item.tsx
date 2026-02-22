@@ -16,7 +16,7 @@ export default function BlogListItem({ post }: { post: MediumPost }) {
       href={post.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col gap-1 rounded border border-dashed p-2 transition-colors hover:bg-muted/50 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+      className="group flex flex-col gap-1 border border-dashed p-2 transition-colors hover:bg-muted/50 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
     >
       <div className="min-w-0 flex-1">
         <h3 className="font-medium transition-colors group-hover:text-primary group-hover:underline">
@@ -37,11 +37,7 @@ export default function BlogListItem({ post }: { post: MediumPost }) {
               <span className="text-xs text-muted-foreground">·</span>
               <div className="flex flex-wrap gap-1">
                 {post.categories.slice(0, 3).map((cat, idx) => (
-                  <Badge
-                    key={idx}
-                    variant="secondary"
-                    className="rounded text-xs"
-                  >
+                  <Badge key={idx} variant="secondary" className="text-xs">
                     {cat}
                   </Badge>
                 ))}

@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { PlayIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
-import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
-import { useState } from "react";
+import { PlayIcon, XIcon } from "@phosphor-icons/react/dist/ssr"
+import { AnimatePresence, motion } from "motion/react"
+import Image from "next/image"
+import { useState } from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-import { Button } from "./button";
+import { Button } from "./button"
 
 type AnimationStyle =
   | "from-bottom"
@@ -17,14 +17,14 @@ type AnimationStyle =
   | "from-right"
   | "fade"
   | "top-in-bottom-out"
-  | "left-in-right-out";
+  | "left-in-right-out"
 
 interface HeroVideoProps {
-  animationStyle?: AnimationStyle;
-  videoSrc: string;
-  thumbnailSrc: string;
-  thumbnailAlt?: string;
-  className?: string;
+  animationStyle?: AnimationStyle
+  videoSrc: string
+  thumbnailSrc: string
+  thumbnailAlt?: string
+  className?: string
 }
 
 const animationVariants = {
@@ -68,7 +68,7 @@ const animationVariants = {
     animate: { x: 0, opacity: 1 },
     exit: { x: "100%", opacity: 0 },
   },
-};
+}
 
 export function HeroVideoDialog({
   animationStyle = "from-center",
@@ -77,15 +77,15 @@ export function HeroVideoDialog({
   thumbnailAlt = "Video thumbnail",
   className,
 }: HeroVideoProps) {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const selectedAnimation = animationVariants[animationStyle];
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const selectedAnimation = animationVariants[animationStyle]
 
   return (
     <div className={cn("relative", className)}>
       <button
         type="button"
         aria-label="Play video"
-        className="group relative cursor-pointer border-0 bg-transparent p-0 w-full h-full"
+        className="group relative h-full w-full cursor-pointer border-0 bg-transparent p-0"
         onClick={() => setIsVideoOpen(true)}
       >
         <Image
@@ -94,12 +94,12 @@ export function HeroVideoDialog({
           width={1920}
           height={1080}
           loading="lazy"
-          className="w-full rounded h-full transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+          className="h-full w-full rounded transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl opacity-0 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100">
-          <div className="bg-primary/10 flex size-28 items-center justify-center rounded-full backdrop-blur-md">
+          <div className="flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
             <div
-              className={`from-primary/30 to-primary relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
+              className={`relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
             >
               <PlayIcon
                 className="size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
@@ -121,7 +121,7 @@ export function HeroVideoDialog({
             tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
-                setIsVideoOpen(false);
+                setIsVideoOpen(false)
               }
             }}
             onClick={() => setIsVideoOpen(false)}
@@ -138,7 +138,7 @@ export function HeroVideoDialog({
                   <XIcon className="size-5" />
                 </Button>
               </motion.button>
-              <div className="relative isolate z-5 size-full overflow-hidden rounded-2xl border-2 border-dashed">
+              <div className="relative isolate z-5 size-full overflow-hidden rounded-2xl">
                 <iframe
                   src={videoSrc}
                   title="Hero Video player"
@@ -152,5 +152,5 @@ export function HeroVideoDialog({
         )}
       </AnimatePresence>
     </div>
-  );
+  )
 }

@@ -1,22 +1,22 @@
-"use client";
+"use client"
 
-import { MoonIcon, SunIcon } from "@phosphor-icons/react";
-import Link from "next/link";
+import { MoonIcon, SunIcon } from "@phosphor-icons/react"
+import Link from "next/link"
 
-import { NAV_ITEMS } from "@/config/site";
+import { NAV_ITEMS } from "@/config/site"
 
-import { Button } from "../ui/button";
-import { useThemeToggle } from "../ui/skiper26";
+import { Button } from "../ui/button"
+import { useThemeToggle } from "../ui/skiper26"
 
 export default function Header() {
   const { isDark, toggleTheme } = useThemeToggle({
     start: "top-down",
     variant: "rectangle",
-  });
+  })
 
   return (
-    <header className="fixed block h-12 top-0 z-10 left-1/2 -translate-x-1/2 max-w-3xl backdrop bg-background/50 backdrop-blur-sm w-full">
-      <nav className="flex items-center justify-between h-full mx-2 md:mx-auto px-2 border-x-2 border-b-2 border-dashed">
+    <header className="backdrop fixed top-0 left-1/2 z-10 block h-12 w-full max-w-3xl -translate-x-1/2 bg-background/50 backdrop-blur-sm">
+      <nav className="mx-2 flex h-full items-center justify-between border-x-2 border-b-2 border-dashed px-2 md:mx-auto">
         <div>
           <Link href={"/"}>/home</Link>
         </div>
@@ -31,23 +31,23 @@ export default function Header() {
           <Button
             type="button"
             onClick={toggleTheme}
-            className="cursor-pointer shadow-none group"
+            className="group cursor-pointer border border-dashed"
             variant={"outline"}
           >
             {isDark ? (
               <SunIcon
                 weight="duotone"
-                className="group-hover:rotate-45 group-hover:transition-all duration-300"
+                className="duration-300 group-hover:rotate-45 group-hover:transition-all"
               />
             ) : (
               <MoonIcon
                 weight="duotone"
-                className="group-hover:rotate-15 group-hover:transition-all duration-250"
+                className="duration-250 group-hover:rotate-15 group-hover:transition-all"
               />
             )}
           </Button>
         </div>
       </nav>
     </header>
-  );
+  )
 }

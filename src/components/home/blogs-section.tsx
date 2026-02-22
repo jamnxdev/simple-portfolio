@@ -20,10 +20,7 @@ export default async function BlogsSection() {
         ))}
       </div>
       <Link href="/blogs">
-        <Button
-          className="group rounded border-0 outline-1 outline-dashed"
-          variant="outline"
-        >
+        <Button className="group border border-dashed" variant="outline">
           <span className="relative inline-flex size-5">
             <ArticleIcon
               weight="duotone"

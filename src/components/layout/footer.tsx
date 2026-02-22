@@ -22,7 +22,7 @@ export default async function Footer() {
           <TooltipTrigger>
             <Button
               variant={"outline"}
-              className={"group rounded-sm border border-dashed shadow-none"}
+              className={"group border border-dashed"}
             >
               <span className="relative inline-flex size-5">
                 <EyeClosedIcon

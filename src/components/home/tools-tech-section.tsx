@@ -12,7 +12,7 @@ export default function ToolsTechSection() {
           <Tooltip key={idx}>
             <TooltipTrigger>
               <div
-                className="flex items-center gap-2 rounded border border-dashed bg-muted/50 px-2 py-1 transition-colors hover:bg-muted"
+                className="flex items-center gap-2 border border-dashed bg-muted/50 px-2 py-1 transition-colors hover:bg-muted"
                 title={tech.name}
               >
                 <Image
