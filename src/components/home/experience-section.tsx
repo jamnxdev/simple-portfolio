@@ -12,7 +12,7 @@ import { Badge } from "../ui/badge"
 
 export default function ExperienceSection() {
   return (
-    <div className="w-full border-b-2 border-dashed p-2">
+    <div className="w-full border-y-2 border-dashed p-2">
       <Accordion
         multiple
         defaultValue={[0, 1]}

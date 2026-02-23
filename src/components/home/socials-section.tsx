@@ -6,7 +6,7 @@ import { Button } from "../ui/button"
 
 export default function SocialSections() {
   return (
-    <div className="social-links grid w-full grid-cols-2 gap-2 border-b-2 border-dashed p-2 *:*:w-full *:*:rounded-none *:*:border *:*:border-dashed md:grid-cols-4">
+    <div className="social-links grid w-full grid-cols-2 gap-2 border-y-2 border-dashed p-2 *:*:w-full *:*:rounded-none *:*:border *:*:border-dashed md:grid-cols-4">
       {SOCIALS.map((item, i) => {
         const Icon = item.icon
         const hoverFill =

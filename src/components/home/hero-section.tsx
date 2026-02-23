@@ -29,7 +29,7 @@ const gradientConfig = {
 
 export default function HeroSection() {
   return (
-    <div className="relative aspect-2/1 w-full p-2 sm:aspect-3/1">
+    <div className="relative aspect-2/1 w-full border-b-2 border-dashed p-2 sm:aspect-3/1">
       <div className="absolute inset-0 h-full p-2">
         <GrainGradient
           {...gradientConfig}

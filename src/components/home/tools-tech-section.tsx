@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
 
 export default function ToolsTechSection() {
   return (
-    <div className="w-full border-b-2 border-dashed p-2">
+    <div className="w-full border-y-2 border-dashed p-2">
       <div className="flex flex-wrap gap-2">
         {USER.toolNTech.map((tech, idx) => (
           <Tooltip key={idx}>

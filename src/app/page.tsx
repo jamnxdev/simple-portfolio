@@ -11,13 +11,32 @@ export default function Page() {
   return (
     <>
       <HeroSection />
+      <Separator />
       <AboutSection />
+      <Separator />
       <SocialSections />
+      <Separator />
       <ExperienceSection />
+      <Separator />
       <ProjectSections />
+      <Separator />
       <GithubSection />
+      <Separator />
       <ToolsTechSection />
+      <Separator />
       <BlogsSection />
     </>
+  )
+}
+
+function Separator() {
+  return (
+    <div
+      className="h-8 w-full opacity-[0.06] dark:border-[#eee] dark:opacity-[0.04]"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(-45deg, transparent, transparent 2px, currentcolor 2px, currentcolor 3px, transparent 3px, transparent 6px)",
+      }}
+    />
   )
 }

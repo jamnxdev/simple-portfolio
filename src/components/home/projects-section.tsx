@@ -8,7 +8,7 @@ import { Button } from "../ui/button"
 
 export default function ProjectSections() {
   return (
-    <div className="flex flex-col items-center gap-2 border-b-2 border-dashed p-2">
+    <div className="flex flex-col items-center gap-2 border-y-2 border-dashed p-2">
       <div className="grid gap-2 sm:grid-cols-2">
         {PROJECTS.slice(0, 2).map((item, i) => {
           return <ProjectCard project={item} key={i} />
