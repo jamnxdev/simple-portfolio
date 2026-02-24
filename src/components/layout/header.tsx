@@ -15,7 +15,7 @@ export default function Header() {
   })
 
   return (
-    <header className="backdrop fixed top-0 left-1/2 z-10 block h-12 w-full max-w-3xl -translate-x-1/2 bg-background/50 backdrop-blur-sm">
+    <header className="backdrop fixed top-0 left-1/2 z-10 block h-12 w-full max-w-3xl -translate-x-1/2 bg-background">
       <nav className="mx-2 flex h-full items-center justify-between border-x-2 border-b-2 border-dashed px-2 md:mx-auto">
         <div>
           <Link href={"/"}>/home</Link>
@@ -32,7 +32,7 @@ export default function Header() {
             type="button"
             onClick={toggleTheme}
             className="group cursor-pointer border border-dashed"
-            variant={"outline"}
+            variant={"ghost"}
           >
             {isDark ? (
               <SunIcon
