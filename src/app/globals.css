@@ -80,6 +80,9 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --scrollbar-track: oklch(0.98 0.001 286.3);
+  --scrollbar-thumb: oklch(0.82 0.008 286.1);
+  --scrollbar-thumb-hover: oklch(0.72 0.013 286);
 }
 
 .dark {
@@ -114,11 +117,34 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --scrollbar-track: oklch(0.18 0.005 285.9);
+  --scrollbar-thumb: oklch(0.34 0.01 286.1);
+  --scrollbar-thumb-hover: oklch(0.46 0.014 286.1);
 }
 
 /* Social link: hover fill is set per-link via --icon-hover-fill on the group */
 .social-links .group:hover svg {
   fill: var(--icon-hover-fill, currentColor);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 @layer base {
