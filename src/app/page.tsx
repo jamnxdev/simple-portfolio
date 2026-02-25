@@ -35,7 +35,7 @@ export default function Page() {
 function Separator() {
   return (
     <div
-      className="h-8 w-full opacity-[0.06] dark:border-[#eee] dark:opacity-[0.04]"
+      className="h-8 w-full opacity-[0.06] dark:border-[#eee]"
       style={{
         backgroundImage:
           "repeating-linear-gradient(-45deg, transparent, transparent 2px, currentcolor 2px, currentcolor 3px, transparent 3px, transparent 6px)",
