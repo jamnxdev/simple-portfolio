@@ -1,7 +1,11 @@
+import { GithubLogoIcon, LinkSimpleIcon } from "@phosphor-icons/react/dist/ssr"
+import Link from "next/link"
+
 import type { Project } from "@/config/content/projects"
 
 import { Avatar, AvatarImage } from "../ui/avatar"
 import { Badge } from "../ui/badge"
+import { Button } from "../ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { HeroVideoDialog } from "../ui/hero-video-dialog"
 import { Status, StatusIndicator } from "../ui/status-indicator"
@@ -31,6 +35,30 @@ export default function ProjectCard({ project }: { project: Project }) {
                 />
               </Avatar>
               {project.title}
+              <div>
+                {(project.liveURL || project.backupLiveURL) && (
+                  <Link
+                    href={project.liveURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant={"ghost"}>
+                      <LinkSimpleIcon weight="duotone" className="size-5" />
+                    </Button>
+                  </Link>
+                )}
+                {project.githubURL && (
+                  <Link
+                    href={project.githubURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant={"ghost"}>
+                      <GithubLogoIcon weight="duotone" className="size-5" />
+                    </Button>
+                  </Link>
+                )}
+              </div>
             </div>
 
             <Tooltip>

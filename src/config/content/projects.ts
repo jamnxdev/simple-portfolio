@@ -8,7 +8,7 @@ export type Project = {
   status: StatusProps["status"]
   liveURL: string
   backupLiveURL?: string
-  githubURL: string
+  githubURL?: string
   toolsNTech: string[]
 }
 
@@ -23,7 +23,7 @@ export const PROJECTS: Project[] = [
     status: "online",
     liveURL: "https://ddosim.live",
     backupLiveURL: "https://ddosim.vercel.app",
-    githubURL: "",
+    githubURL: "https://github.com/DDoSimLab",
     toolsNTech: [
       "Typescript",
       "Next.js",
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     videoSRC: "/demo-videos/daydonezo-demo.mp4",
     status: "online",
     liveURL: "https://daydonezo.vercel.app",
-    githubURL: "",
+    githubURL: "https://github.com/jamnxdev/DayDonezo",
     toolsNTech: [
       "Next.js",
       "Typescript",
@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     videoSRC: "/demo-videos/convonest-demo.mp4",
     status: "online",
     liveURL: "https://convonest.vercel.app",
-    githubURL: "",
+    githubURL: "https://github.com/jamnxdev/ConvoNest",
     toolsNTech: [
       "Next.js",
       "Typescript",
@@ -85,7 +85,6 @@ export const PROJECTS: Project[] = [
     videoSRC: "/demo-videos/claimit-demo.mp4",
     status: "degraded",
     liveURL: "https://claimit.vercel.app",
-    githubURL: "",
     toolsNTech: [
       "Next.js",
       "Typescript",
@@ -106,7 +105,7 @@ export const PROJECTS: Project[] = [
     videoSRC: "/demo-videos/sahyog-demo.mp4",
     status: "online",
     liveURL: "https://sahyogweb.vercel.app",
-    githubURL: "",
+    githubURL: "https://github.com/jamnxdev/Sahyog",
     toolsNTech: [
       "Typescript",
       "Next.js",
@@ -127,7 +126,7 @@ export const PROJECTS: Project[] = [
     videoSRC: "/demo-videos/grtminds-demo.mp4",
     status: "maintenance",
     liveURL: "https://grtminds.vercel.app",
-    githubURL: "",
+    githubURL: "https://github.com/jamnxdev/GreatMinds",
     toolsNTech: [
       "Typescript",
       "Next.js",
