@@ -19,24 +19,26 @@ export default async function Footer() {
     <footer className="flex gap-2 p-2">
       <div>
         <Tooltip>
-          <TooltipTrigger>
-            <Button
-              variant={"outline"}
-              className={"group border border-dashed"}
-            >
-              <span className="relative inline-flex size-5">
-                <EyeClosedIcon
-                  weight="duotone"
-                  className="absolute inset-0 size-5 opacity-100 transition-all duration-200 group-hover:opacity-0"
-                />
-                <EyeIcon
-                  weight="duotone"
-                  className="absolute inset-0 size-5 opacity-0 transition-all duration-200 group-hover:opacity-100"
-                />
-              </span>
-              {visitorCount.toLocaleString()}
-            </Button>
-          </TooltipTrigger>
+          <TooltipTrigger
+            render={
+              <Button
+                variant={"outline"}
+                className={"group border border-dashed"}
+              >
+                <span className="relative inline-flex size-5">
+                  <EyeClosedIcon
+                    weight="duotone"
+                    className="absolute inset-0 size-5 opacity-100 transition-all duration-200 group-hover:opacity-0"
+                  />
+                  <EyeIcon
+                    weight="duotone"
+                    className="absolute inset-0 size-5 opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  />
+                </span>
+                {visitorCount.toLocaleString()}
+              </Button>
+            }
+          />
           <TooltipContent>Visitors</TooltipContent>
         </Tooltip>
       </div>

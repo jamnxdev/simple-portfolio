@@ -62,11 +62,14 @@ export default function ProjectCard({ project }: { project: Project }) {
             </div>
 
             <Tooltip>
-              <TooltipTrigger className={"cursor-pointer"}>
-                <Status status={project.status} className="rounded">
-                  <StatusIndicator />
-                </Status>
-              </TooltipTrigger>
+              <TooltipTrigger
+                className={"cursor-pointer"}
+                render={
+                  <Status status={project.status} className="rounded">
+                    <StatusIndicator />
+                  </Status>
+                }
+              />
               <TooltipContent>{status}</TooltipContent>
             </Tooltip>
           </div>
