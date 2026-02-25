@@ -35,7 +35,7 @@ export const USER = {
     { name: "Supabase", icon: "/tools-tech/supabase.svg" },
     { name: "Figma", icon: "/tools-tech/figma.svg" },
     { name: "Postman", icon: "/tools-tech/postman.svg" },
-    { name: "Socket.IO", icon: "/tools-tech/socket.io.svg" },
+    { name: "Socket.IO", icon: "/tools-tech/socketio.svg" },
     { name: "Angular", icon: "/tools-tech/angular.svg" },
     { name: "AWS", icon: "/tools-tech/aws.svg" },
     { name: "Chakra UI", icon: "/tools-tech/chakraui.svg" },
