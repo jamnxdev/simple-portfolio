@@ -36,28 +36,38 @@ export default function ProjectCard({ project }: { project: Project }) {
               </Avatar>
               {project.title}
               <div>
-                {(project.liveURL || project.backupLiveURL) && (
-                  <Link
-                    href={project.liveURL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant={"ghost"}>
-                      <LinkSimpleIcon weight="duotone" className="size-5" />
-                    </Button>
-                  </Link>
-                )}
-                {project.githubURL && (
-                  <Link
-                    href={project.githubURL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant={"ghost"}>
-                      <GithubLogoIcon weight="duotone" className="size-5" />
-                    </Button>
-                  </Link>
-                )}
+                <Tooltip>
+                  <TooltipTrigger>
+                    {(project.liveURL || project.backupLiveURL) && (
+                      <Link
+                        href={project.liveURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant={"ghost"}>
+                          <LinkSimpleIcon weight="duotone" className="size-5" />
+                        </Button>
+                      </Link>
+                    )}
+                    <TooltipContent>Live</TooltipContent>
+                  </TooltipTrigger>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    {project.githubURL && (
+                      <Link
+                        href={project.githubURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant={"ghost"}>
+                          <GithubLogoIcon weight="duotone" className="size-5" />
+                        </Button>
+                      </Link>
+                    )}
+                  </TooltipTrigger>
+                  <TooltipContent>Github</TooltipContent>
+                </Tooltip>
               </div>
             </div>
 
