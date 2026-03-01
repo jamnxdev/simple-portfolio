@@ -5,6 +5,10 @@ export const SITE_INFO = {
 
 export const NAV_ITEMS = [
   {
+    title: "Home",
+    href: "/",
+  },
+  {
     title: "Projects",
     href: "/projects",
   },

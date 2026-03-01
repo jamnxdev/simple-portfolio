@@ -16,10 +16,7 @@ export default function Header() {
 
   return (
     <header className="backdrop sticky top-0 z-10 h-12 w-full max-w-3xl bg-background md:mx-auto">
-      <nav className="mx-2 flex h-full items-center justify-between border-x-2 border-b-2 border-dashed px-2 md:mx-auto">
-        <div>
-          <Link href={"/"}>/home</Link>
-        </div>
+      <nav className="mx-2 flex h-full items-center justify-end border-x-2 border-b-2 border-dashed px-2 md:mx-auto">
         <div className="flex gap-2">
           {NAV_ITEMS.map((item, key) => (
             <Link href={item.href} key={key}>
