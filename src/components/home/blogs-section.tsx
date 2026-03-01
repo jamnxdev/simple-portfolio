@@ -14,7 +14,7 @@ export default async function BlogsSection() {
 
   return (
     <div className="flex flex-col items-center gap-2 border-y-2 border-dashed p-2">
-      <div className="flex w-full max-w-4xl flex-col gap-2">
+      <div className="flex w-full flex-col gap-2">
         {recentPosts.map((post) => (
           <BlogListItem post={post} key={post.link} />
         ))}

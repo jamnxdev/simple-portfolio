@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} justify-self-center antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -42,7 +42,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="mx-2 flex min-h-screen max-w-3xl flex-col border-x-2 border-dashed md:mx-auto">
+          <main className="mx-2 flex min-h-screen max-w-3xl flex-col border-x-2 border-dashed md:mx-auto lg:min-w-[48rem]">
             {children}
             <Footer />
           </main>

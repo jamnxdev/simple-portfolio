@@ -10,7 +10,7 @@ export default async function BlogsPage() {
 
   return (
     <div className="flex flex-1 flex-col items-center gap-2 border-b-2 border-dashed p-2">
-      <div className="flex w-full max-w-4xl flex-col gap-2">
+      <div className="flex w-full flex-col gap-2">
         {posts.map((post) => (
           <BlogListItem post={post} key={post.link} />
         ))}
