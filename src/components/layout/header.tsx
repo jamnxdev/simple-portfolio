@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex gap-2">
           {NAV_ITEMS.map((item, key) => (
             <Link href={item.href} key={key}>
-              <Button variant={"link"} className={"px-0 text-base"}>
+              <Button variant={"link"} className={"px-0"}>
                 {item.title}
               </Button>
             </Link>
