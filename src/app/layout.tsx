@@ -21,8 +21,49 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: SITE_INFO.title,
+  metadataBase: new URL(SITE_INFO.url),
+  title: {
+    default: SITE_INFO.title,
+    template: `%s | Jaimin Chovatia`,
+  },
   description: SITE_INFO.description,
+  icons: {
+    icon: "/jaimin.svg",
+    apple: "/jaimin.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_INFO.url,
+    title: SITE_INFO.title,
+    description: SITE_INFO.description,
+    siteName: "Jaimin Chovatia",
+    images: [
+      {
+        url: SITE_INFO.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_INFO.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_INFO.title,
+    description: SITE_INFO.description,
+    images: [SITE_INFO.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function RootLayout({
