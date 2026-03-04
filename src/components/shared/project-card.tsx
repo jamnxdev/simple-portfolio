@@ -36,9 +36,10 @@ export default function ProjectCard({ project }: { project: Project }) {
               </Avatar>
               {project.title}
               <div>
+                (project.liveURL || project.backupLiveURL) && (
                 <Tooltip>
-                  <TooltipTrigger>
-                    {(project.liveURL || project.backupLiveURL) && (
+                  <TooltipTrigger
+                    render={
                       <Link
                         href={project.liveURL}
                         target="_blank"
@@ -48,15 +49,17 @@ export default function ProjectCard({ project }: { project: Project }) {
                           <LinkSimpleIcon weight="duotone" className="size-5" />
                         </Button>
                       </Link>
-                    )}
+                    }
+                  >
                     <TooltipContent>Live</TooltipContent>
                   </TooltipTrigger>
                 </Tooltip>
+                ) project.githubURL && (
                 <Tooltip>
-                  <TooltipTrigger>
-                    {project.githubURL && (
+                  <TooltipTrigger
+                    render={
                       <Link
-                        href={project.githubURL}
+                        href={project.githubURL!}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -64,10 +67,11 @@ export default function ProjectCard({ project }: { project: Project }) {
                           <GithubLogoIcon weight="duotone" className="size-5" />
                         </Button>
                       </Link>
-                    )}
-                  </TooltipTrigger>
+                    }
+                  ></TooltipTrigger>
                   <TooltipContent>Github</TooltipContent>
                 </Tooltip>
+                )
               </div>
             </div>
 
