@@ -36,42 +36,48 @@ export default function ProjectCard({ project }: { project: Project }) {
               </Avatar>
               {project.title}
               <div>
-                (project.liveURL || project.backupLiveURL) && (
-                <Tooltip>
-                  <TooltipTrigger
-                    render={
-                      <Link
-                        href={project.liveURL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button variant={"ghost"}>
-                          <LinkSimpleIcon weight="duotone" className="size-5" />
-                        </Button>
-                      </Link>
-                    }
-                  >
+                {(project.liveURL || project.backupLiveURL) && (
+                  <Tooltip>
+                    <TooltipTrigger
+                      render={
+                        <Link
+                          href={project.liveURL || project.backupLiveURL!}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button variant={"ghost"}>
+                            <LinkSimpleIcon
+                              weight="duotone"
+                              className="size-5"
+                            />
+                          </Button>
+                        </Link>
+                      }
+                    ></TooltipTrigger>
                     <TooltipContent>Live</TooltipContent>
-                  </TooltipTrigger>
-                </Tooltip>
-                ) project.githubURL && (
-                <Tooltip>
-                  <TooltipTrigger
-                    render={
-                      <Link
-                        href={project.githubURL!}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button variant={"ghost"}>
-                          <GithubLogoIcon weight="duotone" className="size-5" />
-                        </Button>
-                      </Link>
-                    }
-                  ></TooltipTrigger>
-                  <TooltipContent>Github</TooltipContent>
-                </Tooltip>
-                )
+                  </Tooltip>
+                )}
+                {project.githubURL && (
+                  <Tooltip>
+                    <TooltipTrigger
+                      render={
+                        <Link
+                          href={project.githubURL!}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button variant={"ghost"}>
+                            <GithubLogoIcon
+                              weight="duotone"
+                              className="size-5"
+                            />
+                          </Button>
+                        </Link>
+                      }
+                    ></TooltipTrigger>
+                    <TooltipContent>Github</TooltipContent>
+                  </Tooltip>
+                )}
               </div>
             </div>
 
