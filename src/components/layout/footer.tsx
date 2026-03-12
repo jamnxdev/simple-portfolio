@@ -1,12 +1,7 @@
-import {
-  CopyrightIcon,
-  EyeClosedIcon,
-  EyeIcon,
-} from "@phosphor-icons/react/dist/ssr"
+import { EyeClosedIcon, EyeIcon } from "@phosphor-icons/react/dist/ssr"
 import Link from "next/link"
 
 import { SOCIALS } from "@/config/content/socials"
-import { USER } from "@/config/content/user"
 import { trackSiteVisitorAndGetCount } from "@/lib/analytics/track-site-visitor"
 
 import { Button } from "../ui/button"

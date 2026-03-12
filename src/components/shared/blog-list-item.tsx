@@ -1,4 +1,3 @@
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr"
 import { format } from "date-fns"
 
 import type { MediumPost } from "@/lib/medium"
