@@ -22,7 +22,6 @@
       "@/*": ["./src/*"]
     },
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": [
