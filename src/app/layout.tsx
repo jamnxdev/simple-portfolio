@@ -1,7 +1,7 @@
 import "./globals.css"
 
 import type { Metadata } from "next"
-import { Anton, Figtree, Geist, Lexend, Zain } from "next/font/google"
+import { Geist } from "next/font/google"
 
 import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header"
