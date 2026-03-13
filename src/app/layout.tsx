@@ -1,23 +1,16 @@
 import "./globals.css"
 
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Anton, Figtree, Geist, Lexend, Zain } from "next/font/google"
 
 import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SITE_INFO } from "@/config/site"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const geist = Geist({
+  variable: "--font-sans",
+  weight: ["400"],
 })
 
 export const metadata: Metadata = {
@@ -72,10 +65,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={geist.variable} suppressHydrationWarning>
+      <body className={`antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
