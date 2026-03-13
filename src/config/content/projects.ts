@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
       "DDoSim is an interactive platform for simulating and visualizing Distributed Denial-of-Service (DDoS) attacks in real time across the globe.",
     imgSRC:
       "https://raw.githubusercontent.com/DDoSimLab/Site/refs/heads/main/public/og-image.jpg",
-    videoSRC: "https://ddosim.vercel.app",
+    videoSRC: "/demo-videos/ddosim-demo.mp4",
     status: "online",
     liveURL: "https://ddosim.live",
     backupLiveURL: "https://ddosim.vercel.app",
