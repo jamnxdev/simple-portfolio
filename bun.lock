@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "jamn.dev",
+      "name": "jamnx.com",
       "dependencies": {
         "@base-ui/react": "^1.1.0",
         "@paper-design/shaders-react": "^0.0.71",

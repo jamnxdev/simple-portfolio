@@ -76,7 +76,7 @@ export function GitHubContributionGraph({
                 <a
                   className="font-medium underline underline-offset-4"
                   href={addQueryParams("https://github.com/jamnxdev", {
-                    utm_source: "jamn.dev",
+                    utm_source: "jamnx.com",
                   })}
                   target="_blank"
                   rel="noopener"

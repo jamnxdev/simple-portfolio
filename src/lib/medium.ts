@@ -24,7 +24,7 @@ const fetchMediumPosts = unstable_cache(
     const response = await fetch(MEDIUM_RSS_URL, {
       headers: {
         Accept: "application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
-        "User-Agent": "jamn.dev/1.0 (+https://jamn.dev)",
+        "User-Agent": "jamnx.com  v/1.0 (+https://jamnx.com)",
       },
       next: { revalidate: MEDIUM_REVALIDATE_SECONDS },
       signal: AbortSignal.timeout(MEDIUM_REQUEST_TIMEOUT_MS),
