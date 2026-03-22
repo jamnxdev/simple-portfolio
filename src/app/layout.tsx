@@ -8,6 +8,8 @@ import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SITE_INFO } from "@/config/site"
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const geist = Geist({
   variable: "--font-sans",
   weight: ["400"],
@@ -80,6 +82,7 @@ export default function RootLayout({
           </main>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-4NN21FTRK9" />
     </html>
   )
 }
