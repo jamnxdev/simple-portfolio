@@ -1,5 +1,6 @@
 import "./globals.css"
 
+import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 
@@ -7,8 +8,6 @@ import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SITE_INFO } from "@/config/site"
-
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geist = Geist({
   variable: "--font-sans",
