@@ -3,7 +3,7 @@ export const SITE_INFO = {
   description:
     "Jaimin Chovatia is a software engineer specializing in TypeScript, React, Next.js and full-stack web development. Explore projects, blogs, and more.",
   url: "https://jamnx.com",
-  ogImage: "/og-image.png",
+  ogImage: "https://jamnx.com/og-image.png",
 }
 
 export const NAV_ITEMS = [

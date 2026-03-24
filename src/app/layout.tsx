@@ -46,6 +46,8 @@ export const metadata: Metadata = {
     title: SITE_INFO.title,
     description: SITE_INFO.description,
     images: [SITE_INFO.ogImage],
+    site: "@jamnxdev",
+    creator: "@jamnxdev",
   },
   robots: {
     index: true,
