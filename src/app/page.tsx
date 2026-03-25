@@ -15,8 +15,6 @@ export default function Page() {
       <Separator />
       <AboutSection />
       <Separator />
-      <SocialSections />
-      <Separator />
       <ExperienceSection />
       <Separator />
       <ProjectSections />
@@ -26,6 +24,8 @@ export default function Page() {
       <ToolsTechSection />
       <Separator />
       <BlogsSection />
+      <Separator />
+      <SocialSections />
       <Separator />
       <CallSection />
     </>
