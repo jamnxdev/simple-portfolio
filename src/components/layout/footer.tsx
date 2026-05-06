@@ -9,6 +9,13 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
 
 export default async function Footer() {
   const visitorCount = await trackSiteVisitorAndGetCount()
+  const shouldCompactVisitorCount = visitorCount >= 1000
+  const displayedVisitorCount = shouldCompactVisitorCount
+    ? `${parseFloat((visitorCount / 1000).toFixed(1))
+        .toString()
+        .replace(/\.0$/, "")}k`
+    : visitorCount.toLocaleString()
+  const fullVisitorCount = visitorCount.toLocaleString()
 
   return (
     <footer className="flex gap-2 p-2">
@@ -19,6 +26,7 @@ export default async function Footer() {
               <Button
                 variant={"outline"}
                 className={"group border border-dashed"}
+                title={shouldCompactVisitorCount ? fullVisitorCount : undefined}
               >
                 <span className="relative inline-flex size-5">
                   <EyeClosedIcon
@@ -30,11 +38,14 @@ export default async function Footer() {
                     className="absolute inset-0 size-5 opacity-0 transition-all duration-200 group-hover:opacity-100"
                   />
                 </span>
-                {visitorCount.toLocaleString()}
+                {displayedVisitorCount}
               </Button>
             }
           />
-          <TooltipContent>Visitors</TooltipContent>
+          <TooltipContent>
+            Visitors
+            {shouldCompactVisitorCount ? ` (${fullVisitorCount})` : ""}
+          </TooltipContent>
         </Tooltip>
       </div>
       <div className="flex flex-1 items-center justify-center gap-1 border border-dashed p-1 text-muted-foreground">
