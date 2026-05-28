@@ -1,5 +1,5 @@
 export const SITE_INFO = {
-  title: "Jaimin Chovatia -- Software Engineer",
+  title: "Jaimin Chovatia",
   description:
     "Jaimin Chovatia is a software engineer specializing in TypeScript, React, Next.js and full-stack web development. Explore projects, blogs, and more.",
   url: "https://jamnx.com",
