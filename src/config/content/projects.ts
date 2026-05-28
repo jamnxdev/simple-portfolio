@@ -14,6 +14,28 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: "Arkivo",
+    description:
+      "Arkivo uses AI to capture receipts, extract expense details, organize business documents, and turn spending records into searchable insights.",
+    imgSRC:
+      "https://raw.githubusercontent.com/jamnxdev/arkivo/refs/heads/main/public/og-image.png",
+    videoSRC: "",
+    status: "online",
+    liveURL: "https://arkivo.jamnx.com",
+    githubURL: "https://github.com/jamnxdev/arkivo",
+    toolsNTech: [
+      "Next.js",
+      "Typescript",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Drizzle",
+      "Shadcn UI",
+      "Clerk",
+      "AI sdk",
+      "Cloudinary",
+    ],
+  },
+  {
     title: "DDoSim",
     description:
       "DDoSim is an interactive platform for simulating and visualizing Distributed Denial-of-Service (DDoS) attacks in real time across the globe.",
